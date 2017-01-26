@@ -38,10 +38,6 @@
             padding: 10px;
         }
 
-        #clockclick {
-            margin-top: 5em;
-        }
-
         a:active, a:hover, a:visited, a:link {
             color: white;
         }
@@ -58,9 +54,18 @@
         </div>
     </div>
 
+    <br>
+
     <div class="text-center" id="clockclick">
         <a href="javascript:new Date().toLocaleTimeString();">
             What time is it?
+        </a>
+    </div>
+
+
+    <div class="text-center" class="clockclick">
+        <a href="javascript:alert(new Date().toLocaleTimeString());">
+            Check the time without overwriting the document
         </a>
     </div>
 
