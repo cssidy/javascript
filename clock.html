@@ -38,6 +38,14 @@
             padding: 10px;
         }
 
+        #clockclick {
+            margin-top: 5em;
+        }
+
+        a:active, a:hover, a:visited, a:link {
+            color: white;
+        }
+
     </style>
 
 
@@ -48,6 +56,12 @@
         <div>
             <span id="clock"></span>
         </div>
+    </div>
+
+    <div class="text-center" id="clockclick">
+        <a href="javascript:new Date().toLocaleTimeString();">
+            What time is it?
+        </a>
     </div>
 
 </body>

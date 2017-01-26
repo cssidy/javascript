@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clock.html" afterPath="$PROJECT_DIR$/clock.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reveal_text.html" afterPath="$PROJECT_DIR$/reveal_text.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,21 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="clock.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clock.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="492">
+              <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reveal_text.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reveal_text.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reveal_text.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="762">
-              <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,8 +49,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/clock.html" />
         <option value="$PROJECT_DIR$/reveal_text.html" />
+        <option value="$PROJECT_DIR$/clock.html" />
       </list>
     </option>
   </component>
@@ -171,12 +172,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485390912619</updated>
-      <workItem from="1485390914413" duration="2436000" />
+      <workItem from="1485390914413" duration="3037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2436000" />
+    <option name="totallyTimeSpent" value="3037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1861" height="1056" extended-state="6" />
@@ -211,18 +212,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/clock.html">
+    <entry file="file://$PROJECT_DIR$/reveal_text.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="762">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reveal_text.html">
+    <entry file="file://$PROJECT_DIR$/clock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+        <state relative-caret-position="492">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding />
         </state>
       </provider>
