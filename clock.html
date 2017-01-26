@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <script>
+        // Define a function to display the current time
+        function displayTime() {
+            var elt = document.getElementById("clock"); // Find element with id="clock"
+            var now = new Date();
+            // Get current time
+            elt.innerHTML = now.toLocaleTimeString();
+            // Make elt display it
+            setTimeout(displayTime, 1000);
+            // Run again in 1 second
+        }
+        window.onload = displayTime; // Start displaying the time when document loads.
+    </script>
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+    <style>
+
+        body {
+            background: lightseagreen;
+        }
+
+        #clockdiv {
+            margin-top: 20em;
+        }
+
+        #clock {
+            font: bold 60px sans;
+            background: seagreen;
+            color: #fff;
+            padding: 10px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="text-center" id="clockdiv">
+        <div>
+            <span id="clock"></span>
+        </div>
+    </div>
+
+</body>
+</html>
