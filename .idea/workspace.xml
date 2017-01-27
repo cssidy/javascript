@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clock.html" afterPath="$PROJECT_DIR$/clock.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/link_calc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,12 +21,30 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="clock.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clock.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+            <state relative-caret-position="402">
+              <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="link_calc.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/link_calc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+              <folding>
+                <marker date="1485557045401" expanded="true" signature="150:193" ph="/*...*/" />
+                <marker date="1485557045401" expanded="true" signature="197:447" ph="{...}" />
+                <marker date="1485557045401" expanded="true" signature="199:263" ph="/*...*/" />
+                <marker date="1485557045401" expanded="true" signature="351:387" ph="/*...*/" />
+                <marker date="1485557045401" expanded="true" signature="410:445" ph="/*...*/" />
+                <marker date="1485557045401" expanded="true" signature="458:518" ph="/*...*/" />
+                <marker date="1485557045401" expanded="true" signature="527:590" ph="/*...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,6 +61,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -50,6 +76,7 @@
       <list>
         <option value="$PROJECT_DIR$/reveal_text.html" />
         <option value="$PROJECT_DIR$/clock.html" />
+        <option value="$PROJECT_DIR$/link_calc.html" />
       </list>
     </option>
   </component>
@@ -105,6 +132,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -171,12 +199,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485390912619</updated>
-      <workItem from="1485390914413" duration="3156000" />
+      <workItem from="1485390914413" duration="4030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3156000" />
+    <option name="totallyTimeSpent" value="4030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1861" height="1056" extended-state="6" />
@@ -221,9 +249,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        <state relative-caret-position="402">
+          <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/link_calc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <marker date="1485557045401" expanded="true" signature="150:193" ph="/*...*/" />
+            <marker date="1485557045401" expanded="true" signature="197:447" ph="{...}" />
+            <marker date="1485557045401" expanded="true" signature="199:263" ph="/*...*/" />
+            <marker date="1485557045401" expanded="true" signature="351:387" ph="/*...*/" />
+            <marker date="1485557045401" expanded="true" signature="410:445" ph="/*...*/" />
+            <marker date="1485557045401" expanded="true" signature="458:518" ph="/*...*/" />
+            <marker date="1485557045401" expanded="true" signature="527:590" ph="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
