@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/link_calc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/link_calc.html" afterPath="$PROJECT_DIR$/link_calc.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,13 +36,13 @@
             <state relative-caret-position="432">
               <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
               <folding>
-                <marker date="1485557045401" expanded="true" signature="150:193" ph="/*...*/" />
-                <marker date="1485557045401" expanded="true" signature="197:447" ph="{...}" />
-                <marker date="1485557045401" expanded="true" signature="199:263" ph="/*...*/" />
-                <marker date="1485557045401" expanded="true" signature="351:387" ph="/*...*/" />
-                <marker date="1485557045401" expanded="true" signature="410:445" ph="/*...*/" />
-                <marker date="1485557045401" expanded="true" signature="458:518" ph="/*...*/" />
-                <marker date="1485557045401" expanded="true" signature="527:590" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="154:197" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="205:495" ph="{...}" />
+                <marker date="1485557165953" expanded="true" signature="215:279" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="383:419" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="454:489" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="506:566" ph="/*...*/" />
+                <marker date="1485557165953" expanded="true" signature="583:646" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -199,12 +198,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485390912619</updated>
-      <workItem from="1485390914413" duration="4030000" />
+      <workItem from="1485390914413" duration="5944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4030000" />
+    <option name="totallyTimeSpent" value="5944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1861" height="1056" extended-state="6" />
@@ -260,13 +259,13 @@
         <state relative-caret-position="432">
           <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding>
-            <marker date="1485557045401" expanded="true" signature="150:193" ph="/*...*/" />
-            <marker date="1485557045401" expanded="true" signature="197:447" ph="{...}" />
-            <marker date="1485557045401" expanded="true" signature="199:263" ph="/*...*/" />
-            <marker date="1485557045401" expanded="true" signature="351:387" ph="/*...*/" />
-            <marker date="1485557045401" expanded="true" signature="410:445" ph="/*...*/" />
-            <marker date="1485557045401" expanded="true" signature="458:518" ph="/*...*/" />
-            <marker date="1485557045401" expanded="true" signature="527:590" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="154:197" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="205:495" ph="{...}" />
+            <marker date="1485557165953" expanded="true" signature="215:279" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="383:419" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="454:489" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="506:566" ph="/*...*/" />
+            <marker date="1485557165953" expanded="true" signature="583:646" ph="/*...*/" />
           </folding>
         </state>
       </provider>
