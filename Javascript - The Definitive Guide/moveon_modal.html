@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move On</title>
+
+    <script>
+        function moveon() {
+        // Display a modal dialog to ask the user a question
+            var answer = confirm("Ready to go to Google?");
+            // If they clicked the "OK" button, make the browser load a new page
+            if (answer) window.location = "http://google.com";
+        }
+        // Run the function defined above 15 seconds from now.
+        setTimeout(moveon, 1500);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
