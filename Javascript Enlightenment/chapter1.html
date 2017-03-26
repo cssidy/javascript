@@ -7,7 +7,33 @@
 <body>
 
 
+<script>
 
+    var cassidy = new Object();
+    cassidy.living = true;
+    cassidy.age = 25;
+    cassidy.gender = 'female';
+    cassidy.getGender = function(){return cassidy.gender;};
+
+    console.log(cassidy.getGender());
+
+</script>
+
+
+<script>
+
+    var myObject = new Object();
+    myObject['0'] = 'f';
+    myObject['1'] = 'o';
+    myObject['2'] = 'o';
+
+    console.log(myObject);
+
+    var myString = new String('foo');
+
+    console.log(myString);
+
+</script>
 
 </body>
 </html>
