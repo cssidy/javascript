@@ -9,6 +9,8 @@
 
 <script>
 
+    // objects are containers for properties, each of which has a name and value
+
     var cassidy = new Object();
     cassidy.living = true;
     cassidy.age = 25;
@@ -104,8 +106,51 @@
     console.log(price1 == price3); // false, price1 is primitive price3 is complex
     console.log(price3 == price4); // true, both complex values == 10
 
+</script>
+
+
+<script>
+
+    var object = {
+        myString: 'string',
+        myNumber: 10,
+        myBoolean: false,
+        myNull: null,
+        myUndefined: undefined
+    };
+
+    console.log(object);
+
+    var array = ['string', 10, false, null, undefined];
+
+    console.log(array);
 
 </script>
+
+
+<script>
+    // unlike primitive values that copy a value as it is at one point in time, objects (complex values) copy the reference
+    // and will update their value as it is changed
+    var myObject = {};
+    var copyOfMyObject = myObject;
+    myObject.cassidy = 'happy';
+
+    console.log(myObject, copyOfMyObject);
+
+</script>
+
+<script>
+
+    var objectFoo = {same: 'same'};
+    var objectBar = {same: 'same'};
+    console.log(objectFoo == objectBar); // false, two variables containing identical objects are not equal unless they point at the same object
+
+    var objectA = {foo: 'meow'};
+    var objectB = objectA;
+    console.log(objectA == objectB); // true, points at same object
+
+</script>
+
 
 </body>
 </html>
