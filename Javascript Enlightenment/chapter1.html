@@ -78,6 +78,31 @@
     console.log(myRegExp.constructor);
     console.log(myError.constructor);
 
+</script>
+
+
+<script>
+
+    var myString = 'foo';
+    var myStringCopy = myString;
+
+    var myString = null;
+    // the original value for myString is copied to myStringCopy, and retains that after myString has been altered
+    console.log(myString, myStringCopy);
+
+</script>
+
+
+<script>
+
+    var price1= 10;
+    var price2 = 10;
+    var price3 = new Number('10'); // complex numeric object because 'new' was used
+    var price4 = price3;
+
+    console.log(price1 == price2); // true, both primitive values == 10
+    console.log(price1 == price3); // false, price1 is primitive price3 is complex
+    console.log(price3 == price4); // true, both complex values == 10
 
 
 </script>
