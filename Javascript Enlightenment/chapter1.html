@@ -161,5 +161,18 @@
 </script>
 
 
+<script>
+
+    String.augmentedProperties = [];
+
+    if (!String.prototype.trimIT) {
+        String.prototype.trimIT = function() {
+            return this.replace(/)
+        }
+    }
+
+</script>
+
+
 </body>
 </html>
