@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Mozilla Developer Network/numberGuessingGame.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Mozilla Developer Network/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +33,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sillyStoryGenerator.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sillyStoryGenerator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/sillyStoryGenerator.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basicJS.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="71" column="78" lean-forward="false" selection-start-line="71" selection-start-column="78" selection-end-line="71" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guessNumberGame.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,6 +117,9 @@
         <option value="$PROJECT_DIR$/Google Creative Lab - CODER Projects/music_boxes/views/index.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/numberGuessingGame.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/sillyStoryGenerator.html" />
+        <option value="$PROJECT_DIR$/Mozilla Developer Network/script.js" />
+        <option value="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
+        <option value="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" />
       </list>
     </option>
   </component>
@@ -250,12 +286,12 @@
       <workItem from="1485844702194" duration="6000" />
       <workItem from="1485974075639" duration="6336000" />
       <workItem from="1486867477221" duration="480000" />
-      <workItem from="1490556973036" duration="11164000" />
+      <workItem from="1490556973036" duration="14631000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23932000" />
+    <option name="totallyTimeSpent" value="27399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1861" height="1056" extended-state="6" />
@@ -615,6 +651,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="71" column="78" lean-forward="false" selection-start-line="71" selection-start-column="78" selection-end-line="71" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding />
         </state>
       </provider>
