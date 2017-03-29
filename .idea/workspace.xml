@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" afterPath="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" afterPath="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,21 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basicJS.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="basicJS.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="71" column="78" lean-forward="false" selection-start-line="71" selection-start-column="78" selection-end-line="71" selection-end-column="78" />
+            <state relative-caret-position="542">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guessNumberGame.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guessNumberGame.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state relative-caret-position="396">
+              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -115,8 +116,8 @@
         <option value="$PROJECT_DIR$/Mozilla Developer Network/numberGuessingGame.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/sillyStoryGenerator.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/script.js" />
-        <option value="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" />
+        <option value="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
       </list>
     </option>
   </component>
@@ -283,12 +284,12 @@
       <workItem from="1485844702194" duration="6000" />
       <workItem from="1485974075639" duration="6336000" />
       <workItem from="1486867477221" duration="480000" />
-      <workItem from="1490556973036" duration="16443000" />
+      <workItem from="1490556973036" duration="17314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29211000" />
+    <option name="totallyTimeSpent" value="30082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="52" width="1851" height="998" extended-state="0" />
@@ -660,18 +661,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="71" column="78" lean-forward="false" selection-start-line="71" selection-start-column="78" selection-end-line="71" selection-end-column="78" />
+        <state relative-caret-position="396">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html">
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state relative-caret-position="542">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
