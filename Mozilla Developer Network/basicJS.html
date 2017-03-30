@@ -37,6 +37,9 @@
 <!-- bad practice example -->
 <!-- <button onclick="createParagraph()">Click me!</button> -->
 
+<button class="machine">Start the machine!</button>
+<p class="machine">The machine is stopped...</p>
+
 </body>
 
 
@@ -96,6 +99,46 @@
     var dog = { name: 'ChiChi', breed: 'chihuahua' };
 
     console.log(dog.name);
+
+    var myInt = 5;
+    var myFloat = 6.667;
+
+    console.log(myInt, myFloat);
+
+    var num1 = 10;
+    var num2 = 50;
+    var num3 = 9 * num1 + num2;
+    var num4 = num3 + num1 / 8 + 2;
+    console.log(num4);
+    var num5 = (num3 + num1) / (8 + 2);
+    console.log(num5);
+    num5++;
+    num5--;
+    var a = 3;
+    var b = 4;
+    a *= b;
+    console.log(x);
+
+</script>
+
+
+<script>
+
+    // this causes button confusion...
+    var btn = document.querySelector('button');
+    var txt = document.querySelector('p');
+
+    btn.addEventListener('click', updateBtn);
+
+    function updateBtn() {
+        if (btn.textContent === 'Start machine') {
+            btn.textContent = 'Stop machine';
+            txt.textContent = 'The machine has started!';
+        } else {
+            btn.textContent = 'Start machine';
+            txt.textContent = 'The machine is stopped.';
+        }
+    }
 
 </script>
 

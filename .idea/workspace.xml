@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" afterPath="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,8 +43,8 @@
       <file leaf-file-name="basicJS.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="434">
+              <caret line="126" column="38" lean-forward="false" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -284,12 +283,12 @@
       <workItem from="1485844702194" duration="6000" />
       <workItem from="1485974075639" duration="6336000" />
       <workItem from="1486867477221" duration="480000" />
-      <workItem from="1490556973036" duration="17314000" />
+      <workItem from="1490556973036" duration="18945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30082000" />
+    <option name="totallyTimeSpent" value="31713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="52" width="1851" height="998" extended-state="0" />
@@ -671,8 +670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/basicJS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="434">
+          <caret line="126" column="38" lean-forward="false" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
           <folding />
         </state>
       </provider>
