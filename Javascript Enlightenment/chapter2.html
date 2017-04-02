@@ -6,5 +6,48 @@
 </head>
 <body>
 
+<script>
+    var foo = {foo: 'bar'};
+    var bar = {bar: 'bar'};
+    delete foo.bar;
+    console.log('bar' in foo);
+    console.log('bar' in bar);
+</script>
+
+
+<script>
+    var myArray = ['foo', 'bar'];
+    console.log(myArray.toLocaleString());
+</script>
+
+<script>
+    var myObject = {foo: 'value'};
+    console.log(myObject.hasOwnProperty('foo'));
+
+    console.log(myObject.hasOwnProperty('toString'));
+</script>
+
+<script>
+    //checking to see if it includes value
+    var myObject = {foo: 'value'};
+    console.log('foo' in myObject);
+    console.log('toString' in myObject);
+</script>
+
+<script>
+    // logs the properties inside variable
+    // 'in loops' include inherited properties, not just properties natively inside object
+    var cassidy = {
+        age: 25,
+        gender: 'female'
+    }
+
+    for (var key in cassidy) {
+        if (cassidy.hasOwnProperty(key)) {
+            console.log(key)
+        }
+    }
+</script>
+
 </body>
 </html>
