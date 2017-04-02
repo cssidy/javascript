@@ -6,6 +6,12 @@
 </head>
 <body>
 
+<div>
+    <h1>Chapter 2 - <small>Javascript Enlightenment</small></h1>
+    <h5>Author: Cody Lindley</h5>
+    <p>Hello, Javascript!</p>
+</div>
+
 <script>
     var foo = {foo: 'bar'};
     var bar = {bar: 'bar'};
@@ -47,6 +53,18 @@
             console.log(key)
         }
     }
+</script>
+
+<script>
+    // list host object in browser
+    //for (x in window) {
+    //    console.log(x); // logs all the properties of the window/head object
+    //}
+
+    for (y in window.document) {
+        console.log(y);
+    }
+
 </script>
 
 </body>
