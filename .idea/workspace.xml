@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619f7d1d-ab02-4062-a9ad-a2019d3caa06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javascript Enlightenment/chapter2.html" afterPath="$PROJECT_DIR$/Javascript Enlightenment/chapter2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Mozilla Developer Network/geo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +31,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chapter2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chapter2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Javascript Enlightenment/chapter2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="758">
               <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geo.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/geo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="43" column="105" lean-forward="false" selection-start-line="43" selection-start-column="105" selection-end-line="43" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -117,6 +128,7 @@
         <option value="$PROJECT_DIR$/Mozilla Developer Network/guessNumberGame.html" />
         <option value="$PROJECT_DIR$/Mozilla Developer Network/basicJS.html" />
         <option value="$PROJECT_DIR$/Javascript Enlightenment/chapter2.html" />
+        <option value="$PROJECT_DIR$/Mozilla Developer Network/geo.html" />
       </list>
     </option>
   </component>
@@ -284,12 +296,12 @@
       <workItem from="1485974075639" duration="6336000" />
       <workItem from="1486867477221" duration="480000" />
       <workItem from="1490556973036" duration="19542000" />
-      <workItem from="1491170321197" duration="2370000" />
+      <workItem from="1491170321197" duration="3778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34680000" />
+    <option name="totallyTimeSpent" value="36088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="80" width="1851" height="998" extended-state="0" />
@@ -652,6 +664,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="758">
           <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mozilla Developer Network/geo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="43" column="105" lean-forward="false" selection-start-line="43" selection-start-column="105" selection-end-line="43" selection-end-column="105" />
           <folding />
         </state>
       </provider>
