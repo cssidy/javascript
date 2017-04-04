@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    var cassidy = new Object();
+
+    for (key in cassidy) {
+        if(cassidy.hasOwnProperty(key)) {
+            console.log(key);
+        }
+    }
+</script>
+
+<script>
+    var cassidy1 = new Object();
+    var cassidy2 = new Object(undefined);
+    var cassidy3 = new Object(null);
+
+    console.log(typeof cassidy1, typeof cassidy2, typeof cassidy3);
+
+    console.log(new Object('foo')); //string
+    console.log(new Object(1)); //number
+    console.log(new Object([])); //[]
+    console.log(new Object(function() {})); //function
+    console.log(new Object(true)); //boolean
+    console.log(new Object(/\bt[a-z]+\b/)); ///\bt[a-z]+\b/
+</script>
+
+<script>
+    // create object an its properties
+
+    // user 'object literal' notation
+    var cassidy = {
+        living: true,
+        age: 25,
+        gender: 'female',
+        getGender: function() {return cassidy.gender;}
+    };
+
+    console.log(cassidy);
+</script>
+</html>
