@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4: Function()</title>
+</head>
+<body>
+
+<h1>Functions</h1>
+<p>A function can be used to return a value, construct an object or as a mechanism to run code.</p>
+<p>A function is simply a unique scope of executable statements.</p>
+
+<script>
+    var addNumbersA = new Function('num1', 'num2', 'return num1 + num2');
+    console.log(addNumbersA(2, 2));
+
+    // more common, written the literal way
+    var addNumbersB = function(num1, num2) {return num1 + num2;};
+    console.log(addNumbersB(2, 20));
+</script>
+
+</body>
+</html>
