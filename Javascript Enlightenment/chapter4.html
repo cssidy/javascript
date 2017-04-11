@@ -18,6 +18,26 @@
     var addNumbersB = function(num1, num2) {return num1 + num2;};
     console.log(addNumbersB(2, 20));
 </script>
+    
+<script>
+    var addFunction = new Function('num1', 'num2', 'return num1 + num2');
+    var timesFunction = new Function('num1,num2', 'return num1 * num2');
+    console.log(addFunction(2,2),timesFunction(2,2));
+    // most common patterns for instantiating a function
+    var addFunction = function(num1, num2) {return num1 + num2;}; //expression form
+    function addFunction(num1, num2) {return num1 + num2}; //statement form
+</script>
+    
+<script>
+    // functions always return a value, if not specified, it will return 'undefined'
+    var sayHi = function() {
+        return 'Hi';
+    };
+    
+    console.log(sayHi());
+</script>
+    
+    
 
 </body>
 </html>
