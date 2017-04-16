@@ -35,9 +35,91 @@
     };
     
     console.log(sayHi());
+
+
+    // but logs true because a value 'undefined' is returned
+    var yelp = function() {
+        console.log('I am yelping!');
+    };
+    console.log(yelp() === undefined);
 </script>
-    
-    
+
+<script>
+    // functions stored as variables and called
+    var funcA = function(){}; // funcA()
+    var funcB = [function(){}]; // funcB[0]()
+    funcC = {method: function(){}}; // too.method() or funcC['method']()
+
+    // functions can be sent to and fro from functions
+    var funcD = function(func) {
+        return func
+    };
+
+    var runFuncPassedToFuncD = funcD(function(){console.log('Hi');});
+    runFuncPassedToFuncD();
+
+    // functions are objects, so they have properties
+    var funcE = function(){};
+    funcE.answer = 'yup'; // instance property
+    console.log(funcE.answer); // logs 'yup'
+</script>
+
+<script>
+    // parameters are vehicles for passing values into the scope of a function when it is invoked
+    var addFunction = function(number1, number2) {
+        var sum = number1 + number2;
+        return sum;
+    };
+    // in JS it is legal to omit parameters even if the function has been defined to accept them, though
+    // the function may not work correctly
+    console.log(addFunction(3,3));
+</script>
+
+<script>
+    // 'arguments' object is array-like and contains all of the parameters being passed to the function
+    var add = function() {
+        return arguments[0] + arguments[1];
+    };
+
+    console.log(add(4,4));
+</script>
+
+<script>
+    // 'this' object is a reference to the parent object that contains the function
+    var myObject1 = {
+        name: 'myObject',
+        myMethod: function(){console.log(this);}
+    };
+
+    myObject1.myMethod(); // logs 'myObject1'
+
+    var myObject2 = function(){console.log(this);};
+
+    myObject2(); // logs window
+</script>
+
+<script>
+    // arguments has a property 'callee' which is a reference to the function currently executing
+    var foo = function foo() {
+        console.log(arguments.callee);
+        /* (arguments.callee()); */
+        /* calls function recursively */
+    }();
+</script>
+
+<script>
+    var myFunction = function(z, s, d) {
+        return arguments.length;
+    };
+
+    console.log(myFunction()); // logs 0 because no parameters were passed
+
+    var myFunction = function(z, s, d, e, r, m, q) {
+        return myFunction.length;
+    };
+
+    console.log(myFunction()); // logs the number of parameters the function is expecting (7)
+</script>
 
 </body>
 </html>
