@@ -121,5 +121,45 @@
     console.log(myFunction()); // logs the number of parameters the function is expecting (7)
 </script>
 
+<script>
+    var foo = false;
+    var bar = false;
+
+    var myFunction = function(foo, bar) {
+        arguments[0] = true;
+        bar = true;
+        console.log(arguments[0], bar);
+    }
+
+    myFunction();
+</script>
+
+<script>
+    // functions can be cancelled at anytime with the 'return' keyword
+    var add = function(x, y) {
+        // if not numbers, return error
+        if (typeof x !== 'number' || typeof y !== 'number') {return 'this is a string: pass in numbers';}
+        return x + y;
+    };
+    console.log(add(3,3));
+    console.log(add('2','2'));
+</script>
+
+<script>
+    // functions can be defined in three different ways:
+    // constructors, statements, and expressions
+    var addConstructor = new Function('x', 'y', 'return x + y');
+    function addStatement(x, y) {
+        return x + y;
+    }
+    var addExpression = function(x, y) {
+        return x + y;
+    }
+    console.log(addConstructor(2,2), addStatement(2,2), addExpression(2,2));
+
+    // named function expression
+    var add = function add(x, y) {return x + y}
+</script>
+
 </body>
 </html>
