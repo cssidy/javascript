@@ -177,7 +177,7 @@
         this.age = 25;
         this.gender = 'female';
         this.getGender = function() {return this.gender;};
-    }
+    };
     var cassidy = new Cassidy(); //invoke via Cassidy constructor
     console.log(cassidy);
 
@@ -186,7 +186,7 @@
         runGreet: function(){
             console.log(this.name,arguments[0],arguments[1]);
         }
-    }
+    };
     var jill = {name:'jill'};
     var lisa = {name: 'lisa'};
 
@@ -194,6 +194,94 @@
     greet.runGreet.apply(lisa, ['foo','bar']);
 
 </script>
+
+<script>
+    // function(){console.log('hi');} // anonymous function, no way to invoke
+
+    var sayHi = function(f){
+        f(); // invoke anonymous function
+    };
+
+    sayHi(function(){console.log('hi');}); // log 'hi'
+</script>
+
+<script>
+    // self invoking functions
+    var sayWord = function() {console.log('Word 2 yo mo!');}();
+
+</script>
+
+<script>
+    // most commonly used self-invoking anonymous functions
+    (function(msg) {
+        console.log(msg);
+    })('Hi');
+
+    // slightly different
+    (function(msg) {
+        console.log(msg)
+    }('Hi'));
+
+    // the shortest possible solution
+    !function sayHi(msg) {console.log(msg);}('Hi');
+
+    // FYI this doesn't work
+    // function sayHi() {console.log(msg);}();
+
+</script>
+
+<script>
+    // nested functions
+    var foo = function() {
+        var bar = function() {
+            var goo = function() {
+                console.log(this);
+            }();
+        }();
+    }();
+</script>
+
+<script>
+    // functions can be sent to and back from functions
+    var foo = function(f) {
+        return f;
+    };
+
+    var bar = foo(function() {console.log('Hi');});
+
+    bar();
+</script>
+
+<script>
+    // function hoisting, calling a function before it's defined
+    // this happens because before code is run function statements are interpreted and added to the execution stack/context
+    var speak = function() {
+        sayYo();
+        function sayYo() {console.log('Yo');}
+    }();
+
+    console.log(sum(2,2));
+    function sum(x,y) {return x + y;}
+    // only function statements are hosted, not function expressions
+
+    // a function calling itself is not unusual, it is used in well-known patterns
+    // this example creates a loop that count downs from 10 to 0
+
+    var countDownFrom = function countDownFrom(num) {
+        console.log(num);
+        num--; // change the parameter value
+        if (num < 0){return false};
+        countDownFrom(num);
+    };
+
+    countDownFrom(10)
+</script>
+
+<script>
+
+</script>
+
+
 
 </body>
 </html>
