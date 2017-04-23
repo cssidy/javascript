@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 5: The Head/Global Object</title>
+</head>
+<body>
+
+<Script>
+    // the head object is the highest scope/context available in a Javascript environment
+    var myStringVar = 'myString';
+    var myFunctionVar = function() {};
+    myString = 'myString';
+    myFunction = function() {};
+
+    console.log('myStringVar' in window);
+    console.log('myFunctionVar' in window);
+    console.log('myString' in window);
+    console.log('myFunction' in window);
+</Script>
+
+<script>
+    // 'global properties' or 'global variables'
+    var foo = 'bar';
+    var myApp = function() {
+        var run = function() {
+            console.log(foo);
+        }();
+    };
+    myApp();
+
+    // foo is undefined, no longer in the global scope
+    /* var myFunction = function() {var foo = 'bar'};
+
+    var myApp = function() {
+        var run = function() {
+            console.log(foo);
+        }();
+    };
+
+    myApp(); */
+</script>
+
+<script>
+    // two ways to reference the head object
+    var foo = 'bar';
+
+    windowRef1 = window;
+    windowRef2 = this;
+
+    console.log(windowRef1, windowRef2);
+    console.log(windowRef1.foo, windowRef2.foo);
+</script>
+
+<script>
+    // typically references to the head object are not used because they are implied
+    // for example, window.alert() and alert() are essentially the same statement
+    // explicitly calling window.alert() costs a little bit more in re: to performence 
+
+    var foo = { // window.foo
+        fooMethod: function() {
+            alert('foo' + 'bar'); // window.alert
+            window.alert('foo' + 'bar');
+        }
+    };
+
+    foo.fooMethod(); // window.foo.fooMethod()
+    console.log(foo);
+</script>
+
+
+</body>
+</html>
