@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+        .item-thumbnails {
+            width: 60px;
+            float:left;
+        }
+        
+        .item-thumbnails img {
+            margin-top: 5px;
+            width: 60px;
+        }
+        
+        .item-image {
+            max-width:330px;
+            max-height:330px;
+            overflow:hidden;
+            margin:auto;
+        }
+        
+        .item-image img {
+            width:100%;
+            max-height:330px;
+        }
+
+        .item-image.with-thumbnails {
+            text-align:center;
+            margin-left:150px;
+            max-width:330px;
+            max-height:330px;
+        }
+        
+        .featured {
+            border: 2px solid #ccc;
+            padding: 3px;
+        }
+    </style>
+  
+  </head>
+  <body>
+      <div class="item-image-wrap">
+        <div class="item-thumbnails">
+          <img class="item-thumb"  src="https://images.r.cruisecritic.com/destinations/rewrite_norwegian-fjords-1.jpg" alt="thumb" />
+          <img class="item-thumb" src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiljrfkyM_UAhWBeCYKHaeXB-8QjBwIBA&url=http%3A%2F%2Fwww.hdwallpapers.in%2Fwalls%2Fnorway_fjord-wide.jpg&psig=AFQjCNGEyOjEuAyRFSNFkRZ6RVPWFLqM_g&ust=1498156136816675" alt="thumb" />
+          <img class="item-thumb" src="https://www.fjordtravel.no/wp-content/uploads/2014/10/IMG_3048-1280x853-1024x682.jpg" alt="thumb" />
+        </div>
+        
+        <div id="panel" class="item-image with-thumbnails">
+            <img src="http://res.cloudinary.com/simpleview/image/upload/v1470836048/clients/norway/naeroyfjorden_fjord_norway_2_1_001b9127-14ad-4b3d-99b6-29d8b3aae412.jpg" alt="large" />
+        </div>
+      </div>
+      
+     
+      <script>
+      // for item, click on thumbnails, swap out the featured image
+      $( document ).ready(function() {
+          $('.item-thumbnails').delegate('img','click', function(){
+              $(".item-thumb").removeClass('featured');
+              $(this).addClass('featured');
+              var newLargeImage = $(this).attr('src');
+              $('.item-image img', $(this).parents('.item-image-wrap')).attr('src', newLargeImage);
+          });
+      });
+      </script>
+  </body>
+</html>
