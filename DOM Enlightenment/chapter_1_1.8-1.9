@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 1: 1.8 - 1.9</title>
+</head>
+<body>
+
+
+<form>
+    <label for="favoriteColor">Enter your favorite color:</label>
+    <input id="favoriteColor" value="sea green">
+</form>
+
+<div id="A"></div>
+<div id="B"></div>
+<div id="C"></div>
+<div id="D"></div>
+<div id="E"></div>
+<div id="F"><i>Helllooooo</i></div>
+<div id="G">Dude <strong> !</strong></div>
+
+<i id="elm">how</i>
+
+<form>
+    <label for="myName">What is your name?</label>
+    <input id="myName" value="Cassidy">
+    <button id="submitButton" value="Submit">Submit</button>
+</form>
+
+<p>Greetings, <span id="placeName"></span>.</p>
+
+
+<script>
+    // get favoriteColor from form and reprint it elsewhere
+    var favoriteColorSeaGreen = document.querySelector('input[value="sea green"]');
+    console.log(favoriteColorSeaGreen);
+
+
+    // create elements and text node and add it them to the DOM
+    document.getElementById('A').innerHTML = '<strong>Hello</strong>';
+    document.getElementById('B').outerHTML = '<div id="B" class="new">Whats Shaking</div>';
+    document.getElementById('C').textContent = 'dude';
+    document.getElementById('D').innerText = 'Keep it';
+    document.getElementById('E').outerText = 'real!';
+
+    // I like how this logs the updated HTML, post JS additions!
+    console.log(document.body.innerHTML);
+
+    var elm = document.getElementById('elm');
+
+    elm.insertAdjacentHTML('beforebegin', '<span>Hey-</span>');
+    elm.insertAdjacentHTML('afterbegin', '<span>dude-</span>');
+    elm.insertAdjacentHTML('beforeend', '<span>-are</span>');
+    elm.insertAdjacentHTML('afterend', '<span>-you?</span>');
+
+    console.log(document.body.innerHTML);
+
+    // take myName from elsewhere and add it to placeName
+    var enteredName = document.getElementById('myName').value;
+    console.log(enteredName);
+    var nameSport = document.getElementById('placeName');
+    document.getElementById('placeName').innerText = enteredName;
+
+    console.log(document.getElementById('F').innerHTML);
+    console.log(document.getElementById('F').outerHTML);
+    console.log(document.getElementById('G').textContent);
+    console.log(document.getElementById('G').innerText);
+    console.log(document.getElementById('G').outerText);
+
+
+</script>
+
+</body>
+</html>
