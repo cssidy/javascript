@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 1.1 - 1.7</title>
+</head>
+<body>
+
+<p>sea green</p>
+
+<a href="#">Here's a link</a>
+
+<form>
+    <label for="favoriteColor">Enter your favorite color:</label>
+    <input id="favoriteColor" value="sea green">
+    <button id="submitButton" type="submit" value="Submit">Submit</button>
+</form>
+
+<script>
+    console.log(Node.ELEMENT_NODE);
+
+    // print all types of nodes and their values
+    for(var key in Node){
+        console.log(key, ' = ' + Node[key]);
+    }
+
+    // get reference to element node object
+    var nodeAnchor = document.querySelector('a');
+    // create props array to store property keys for element node object
+    var props = [];
+
+    // loop over element node object getting all properties and methods (inherited too)
+    for(var foo in nodeAnchor){
+        props.push(foo);
+    }
+
+    // log alphabetical list of properties and methods
+    console.log(props.sort());
+
+
+    // print name of node and its type
+    console.log(
+        document.doctype.nodeName,
+        document.doctype.nodeType,
+        document.nodeName,
+        document.nodeType,
+        document.createDocumentFragment().nodeName,
+        document.createDocumentFragment().nodeType,
+        document.querySelector('a').nodeName,
+        document.querySelector('a').nodeType,
+        document.querySelector('a').firstChild.nodeName,
+        document.querySelector('a').firstChild.nodeType
+    );
+
+    // is <a> a ELEMENT_NODE? logs true
+    console.log(document.querySelector('a').nodeType === 1);
+    console.log(document.querySelector('a').nodeType === Node.ELEMENT_NODE);
+
+    console.log(document.querySelector('a').firstChild.nodeValue);
+
+    var favoriteColor = document.querySelector('p');
+    console.log(favoriteColor.firstChild.nodeValue);
+
+    var elementNode = document.createElement('div');
+    console.log(elementNode, elementNode.nodeType);
+
+    var textNode = document.createTextNode('Hi');
+    console.log(textNode, textNode.nodeType);
+
+</script>
+
+</body>
+</html>
