@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 1: 1.10 - 1.15</title>
+</head>
+<body>
+
+<p>Hi</p>
+
+<ul>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<div id="A">This is my</div>
+<div id="B">computer</div>
+
+<a href="#">I AM A LINK</a>
+<a href="#">I am a super obvious link!</a>
+<a href="#">Link, link, link.</a>
+
+<script>
+    // create a blank element node and text node
+    var elementNode = document.createElement('strong');
+    var textNode = document.createTextNode(' Cassidy');
+
+    // append these nodes to the DOM
+    document.querySelector('p').appendChild(elementNode);
+    document.querySelector('strong').appendChild(textNode);
+
+    // show log
+    console.log(document.body.innerHTML);
+</script>
+
+<script>
+    // create a text node and li element node and append the text to the li
+    // this doesn't post anything to the DOM, it just puts the text inside the li
+    var text1 = document.createTextNode('1');
+    var li = document.createElement('li');
+    li.appendChild(text1);
+
+    // select the ul in the document
+    var ul = document.querySelector('ul');
+
+    // add the li element we created above to the DOM, call on <ul> and pass reference to <li>2</li> using ul.firstChild
+    ul.insertBefore(li,ul.firstChild);
+
+    console.log(document.body.innerHTML);
+</script>
+
+<script>
+    // remove element node
+    /* var divA = document.getElementById('A');
+    divA.parentNode.removeChild(divA);
+    */
+
+    // remove text node
+    // leaves an empty <div>, only takes the text out of the inside
+    /* var divB = document.getElementById('B').firstChild;
+    divB.parentNode.removeChild(divB);
+    */
+
+    // replace element node
+    var divA = document.getElementById('A');
+    var newSpan = document.createElement('span');
+    newSpan.textContent = 'Howdy';
+    divA.parentNode.replaceChild(newSpan, divA);
+
+    // replace text node
+    var divB = document.getElementById('B').firstChild;
+    var newText = document.createTextNode('buddy');
+    divB.parentNode.replaceChild(newText, divB);
+
+</script>
+
+<script>
+    var cloneUL = document.querySelector('ul').cloneNode(true);
+
+    console.log(cloneUL.constructor); // logs HTMLUListElement
+    console.log(cloneUL.innerHTML); // logs <li>1</l1><li>2</li><li>3</li>, otherwise if .cloneNode is not true,
+    // logs empty string, only the ul was cloned
+</script>
+
+<script>
+    var ulElementsChildNodes = document.querySelector('ul').childNodes;
+    console.log(ulElementsChildNodes); // logs an array-like list of all the nodes inside ul (6) [li, text, li, text, li, text]
+
+    // loop over the node list
+    Array.prototype.forEach.call(ulElementsChildNodes, function(item){
+        console.log(item);
+    });
+</script>
+
+<script>
+    // node lists and HTML collections are array-like but are not true arrays. Node lists and HTML collections do not inherit
+    // array methods. Node list and HTMLCollection are live lists. Converting them to true Javascript arrays allows us to clone
+    // a snapshot of the live lists not tied to the DOM, and gives up access to array methods
+
+    console.log(Array.isArray(document.links)); // false, it's an HTMLCollection not an array
+    console.log(Array.isArray(document.querySelectorAll('a'))); // returns false, it's a NodeList not an array
+
+    // use call(), apply(), or slice() to return an array
+    console.log(Array.isArray(Array.prototype.slice.call(document.links))); // returns true
+    console.log(Array.prototype.slice.call(document.querySelectorAll('a'))); // returns [a], true
+
+    // (ノ^∇^)
+    // ECMAScript 6 - Array.from()
+    console.log(Array.from(document.querySelectorAll('a')));
+</script>
+
+</body>
+</html>
