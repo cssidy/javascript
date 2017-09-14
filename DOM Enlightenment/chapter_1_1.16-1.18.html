@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 1: 1.16 - 1.18</title>
+</head>
+<body>
+
+<ul>
+    <!-- comment -->
+    <li id="a"></li>
+    <li id="b"></li>
+    <!-- comment -->
+</ul>
+
+<input type="text">
+<input type="text">
+
+<textarea>foo</textarea>
+<textarea>bar</textarea>
+
+<script>
+    // cache selection of the ul
+    var ul = document.querySelector('ul');
+
+    // what is parentNode of the ul?
+    console.log(ul.parentNode.nodeName); // BODY
+
+    // what is the first child of the ul?
+    console.log(ul.firstChild.nodeName); // #text
+
+    // what is the last child of the ul?
+    console.log(ul.lastChild.nodeName); // #text
+
+    // what is the nextSibling of the first li?
+    console.log(ul.querySelector('#a').nextSibling.nodeName); // #text
+
+    // what is the previousSibling of the last li?
+    console.log(ul.querySelector('#b').previousSibling.nodeName); // #text
+
+    // what is the first child of the ul?
+    console.log(ul.firstElementChild.nodeName); // #text
+
+    // what is the last child of the ul?
+    console.log(ul.lastElementChild.nodeName); // #text
+
+    // what is the nextSibling of the first li?
+    console.log(ul.querySelector('#a').nextElementSibling.nodeName); // #text
+
+    // what is the previousSibling of the last li?
+    console.log(ul.querySelector('#b').previousElementSibling.nodeName); // #text
+</script>
+
+<script>
+    // ask whether a node is contained inside another node
+    var inside = document.querySelector('html').contains(document.querySelector('body'));
+
+    console.log(inside); // logs true
+</script>
+
+<script>
+    // logs true, because they are exactly identical
+    var input = document.querySelectorAll('input');
+    console.log(input[0].isEqualNode(input[1]));
+
+    // logs false, because the child text node is not the same
+    var textarea = document.querySelectorAll('textarea');
+    console.log(textarea[0].isEqualNode(textarea[1]));
+
+    // do two node references refer to the same node? does not care if they are equal
+    console.log(document.querySelectorAll('input') == document.querySelectorAll('textarea'));
+</script>
+
+</body>
