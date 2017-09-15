@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 2: 2.1 - 2.10</title>
+</head>
+<body>
+
+    <textarea></textarea>
+
+    <iframe src="chapter_1_1.1_1.7.html"></iframe>
+
+<script>
+    console.log(window.document.constructor); // logs function HTMLDocument()
+    console.log(window.document.nodeType); // logs 9, which maps to DOCUMENT_NODE
+</script>
+
+<script>
+    // document own properties
+    console.log(Object.keys(document).sort());
+
+    // document own properties and inherited properties
+    var documentPropertiesIncludeInherited = [];
+    for(var p in document){
+        documentPropertiesIncludeInherited.push(p);
+    }
+    console.log(documentPropertiesIncludeInherited.sort());
+
+    // document inherited properties only
+    var documentPropertiesOnlyInherited = [];
+    for(var p in document){
+        if(!document.hasOwnProperty(p)){documentPropertiesOnlyInherited.push(p);}
+    }
+    console.log(documentPropertiesOnlyInherited.sort());
+</script>
+
+<script>
+    // grab some general information about the document
+    var d = document;
+    console.log('title = ' +d.title);
+    console.log('url = ' +d.URL);
+    console.log('referrer = ' +d.referrer);
+    console.log('lastModified = ' +d.lastModifiedDate);
+
+    // logs either BackCompat (Quirks Mode) or CSS1Compat (Strict Mod)
+    console.log('compatibility mode = ' +d.compatMode);
+</script>
+
+<script>
+    // This is the doctype/DTD
+    console.log(document.childNodes[0].nodeType); // logs 10, which maps to DOCUMENT_TYPE_NODE
+
+    // This is the <html> element
+    console.log(document.childNodes[1].nodeType); // logs 1, which maps to ELEMENT_TYPE_NODE
+</script>
+
+<script>
+    console.log(document.doctype);
+
+
+
+    console.log(document.documentElement);
+    console.log(document.head);
+    console.log(document.body);
+</script>
+
+<script>
+    console.log(document.implementation.hasFeature('Core', '2.0'));
+    console.log(document.implementation.hasFeature('Core', '3.0'));
+</script>
+
+<script>
+    // set focus area to <textarea>
+    document.querySelector('textarea').focus();
+
+    // get reference to element that is focused/active in the document
+    console.log(document.activeElement); // logs <textarea>
+</script>
+
+<script>
+    // if you keep focus on the window/tab that has the document loaded it's true, if not it's false
+    setTimeout(function(){console.log(document.hasFocus())},5000);
+</script>
+
+<script>
+    console.log(document.defaultView) // reference, head JS object (Window in a browser)
+    // or in a headless/non-browser environment such as Node.js, can get you access to head object scope
+</script>
+
+<script>
+    // get the window.document that the <body> is contained within
+    console.log(document.body.ownerElement);
+
+    // get the window.document the <body> inside of the iframe is contained within
+    console.log(window.frames[0].document.body.ownerElement);
+</script>
+
+</body>
+</html>
