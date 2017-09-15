@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 3: </title>
+
+    <style>
+        .dog {
+            color: lightgray;
+            background: burlywood;
+            padding: 20px;
+        }
+
+        .cat {
+            color: wheat;
+            background: midnightblue;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-foo-foo="foo" data-bar-bar="bar"></div>
+
+    <a href="#" title="title" data-foo="datafoo" class="yes" style="color:red" foo="boo" hidden="hidden" goo >I'm a link!</a>
+
+    <br>
+
+    <label for="checky">Label</label>
+    <input id="checky" type="checkbox" checked><input>
+
+    <br>
+    <br>
+
+    <div id="dodg" class="dog">Dodg</div>
+
+    <br>
+    <br>
+
+    <div id="bear" class="big brown bear">Big brown bear</div>
+
+    <br>
+    <br>
+
+    <script>
+        // grab <a> element from DOM and aks for the name of the constructor that constructed it
+        console.log(document.querySelector('a').constructor);
+    </script>
+
+    <script>
+        var anchor = document.querySelector('a');
+
+        // element own properties
+        console.log(Object.keys(anchor).sort());
+
+        // element own properties and inherited properties
+        var documentPropertiesIncludeInherited = [];
+        for(var p in document){
+            documentPropertiesIncludeInherited.push(p);
+        }
+        console.log(documentPropertiesIncludeInherited.sort());
+
+        // element inherited properties only
+        var documentPropertiesOnlyInherited = [];
+        for(var p in document){
+            if(!document.hasOwnProperty(p)){
+                documentPropertiesOnlyInherited.push(p);
+            }
+        }
+        console.log(documentPropertiesOnlyInherited.sort());
+    </script>
+
+    <script>
+        var elementNode = document.createElement('textarea'); // constructs <textarea>
+
+        document.body.appendChild(elementNode);
+
+        console.log(document.querySelector('textarea')); // verify it's now in the DOM
+    </script>
+
+    <script>
+        console.log(document.querySelector('a').tagName); // logs A
+
+        // nodeName property returns the same value as tagName
+        console.log(document.querySelector('a').nodeName); // logs A
+    </script>
+
+    <script>
+        var atts = document.querySelector('a').attributes;
+
+        for(var i=0; i< atts.length; i++) {
+            console.log(atts[i].nodeName + " = " + atts[i].nodeValue);
+        }
+    </script>
+
+    <script>
+        var atts = document.querySelector('a');
+
+        // get attributes
+        console.log(atts.getAttribute('href'));
+        console.log(atts.getAttribute('title'));
+        console.log(atts.getAttribute('style'));
+        console.log(atts.getAttribute('data-foo'));
+        console.log(atts.getAttribute('class'));
+        console.log(atts.getAttribute('foo'));
+        console.log(atts.getAttribute('hidden'));
+
+        // remove attributes
+        atts.removeAttribute('href');
+        atts.removeAttribute('title');
+        atts.removeAttribute('style');
+        atts.removeAttribute('data-foo');
+        atts.removeAttribute('class');
+        atts.removeAttribute('foo');
+        atts.removeAttribute('hidden');
+
+        // re-set attributes
+        atts.setAttribute('href', 'www.google.com');
+        atts.setAttribute('title', 'title');
+        atts.setAttribute('style', 'color:green');
+        atts.setAttribute('data-foo', 'dataFoo');
+        atts.setAttribute('class', 'yes');
+        atts.setAttribute('foo', 'boo');
+        atts.setAttribute('hidden', '');
+
+        // get attributes
+        console.log(atts.getAttribute('href'));
+        console.log(atts.getAttribute('title'));
+        console.log(atts.getAttribute('style'));
+        console.log(atts.getAttribute('data-foo'));
+        console.log(atts.getAttribute('class'));
+        console.log(atts.getAttribute('foo'));
+        console.log(atts.getAttribute('hidden'));
+    </script>
+
+    <script>
+        /*
+        console.log(
+            atts.hasAttribute('href'),
+            atts.hasAttribute('title'),
+            atts.hasAttribute('style'),
+            atts.hasAttribute('data-foo'),
+            atts.hasAttribute('class'),
+            atts.hasAttribute('goo') // this is true regardless of whether a value is given to it
+        )*/
+    </script>
+
+    <script>
+        var atts = document.querySelector('input');
+        console.log(atts.hasAttribute('checked'));
+    </script>
+
+    <script>
+        var elm = document.querySelector('div');
+
+        console.log(elm.classList); // (3) ["big", "brown", "bear", value: "big brown bear"]
+        console.log(elm.className); // big brown bear
+    </script>
+
+    <script>
+        var elm = document.querySelector('#dodg');
+
+        elm.classList.add('cat');
+        elm.classList.remove('dog');
+        console.log(elm.className);
+    </script>
+
+    <script>
+        var elm = document.querySelector('div');
+
+        elm.classList.toggle('visible');
+        elm.classList.toggle('grow');
+        console.log(elm.className);
+    </script>
+
+    <script>
+        var elm = document.querySelector('#bear');
+
+        console.log(elm.classList.contains('brown')); // logs true
+    </script>
+
+    <script>
+        var elm = document.querySelector('div');
+
+        // get
+        console.log(elm.dataset.fooFoo);
+        console.log(elm.dataset.barBar);
+
+        // set
+        elm.dataset.gooGoo = 'goo';
+        console.log(elm.dataset);
+
+        // what it looks like in DOM
+        console.log(elm);
+    </script>
+
+
+</body>
+</html>
