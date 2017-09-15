@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4</title>
+</head>
+<body>
+
+    <ul>
+        <li class="liClass"><strong>Hello</strong></li>
+        <li class="liClass">big</li>
+        <li class="liClass">bad</li>
+        <li class="liClass" id="last">world</li>
+    </ul>
+
+    <div>
+        <ul>
+            <li class="liClass">Hellooo</li>
+        </ul>
+    </div>
+
+</body>
+
+<script>
+    console.log(document.querySelector('li').textContent);
+    console.log(document.getElementById('last').textContent);
+</script>
+
+<script>
+    console.log(document.querySelectorAll('li'));
+    console.log(document.getElementsByTagName('li'));
+    console.log(document.getElementsByClassName('liClass'));
+</script>
+
+<script>
+    var ulElement = document.querySelector('ul').children;
+
+    // logs list/array of all immediate child element nodes
+    console.log(ulElement);
+</script>
+
+<script>
+    // select div as the context to run the selecting methods on
+    var div = document.querySelector('div');
+
+    console.log(div.querySelector('ul'));
+    console.log(div.querySelectorAll('li'));
+    console.log(div.getElementsByTagName('li'));
+    console.log(div.getElementsByClassName('liClass'));
+
+    var divElm = document.createElement('div');
+    var ulElm = document.createElement('ul');
+    var liElm = document.createElement('li');
+
+    liElm.setAttribute('class', 'liClass');
+    ulElm.appendChild(liElm);
+    divElm.appendChild(ulElm);
+
+    console.log(divElm.querySelector('ul'));
+    console.log(divElm.querySelectorAll('li'));
+    console.log(divElm.getElementsByTagName('li'));
+    console.log(divElm.getElementsByClassName('liClass'));
+
+    console.log(document.all);
+</script>
+
+<script>
+    console.log(document.querySelector('li').matches('li:first-child'));
+
+    /* legacy
+
+    console.log(document.querySelector('li').webkitMatchesSelector('li:first-child'));
+    console.log(document.querySelector('li').matchesSelector('li:first-child'));
+    console.log(document.querySelector('li').mozMatchesSelector('li:first-child'));
+    console.log(document.querySelector('li').oMatchesSelector('li:first-child'));
+    console.log(document.querySelector('li').msMatchesSelector('li:first-child'));
+    */
+</script>
+
+</html>
