@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .colorElement {
+            background: mediumaquamarine;
+            color: #fff;
+        }
+
+        .noColorElement {
+            background: #fff;
+            color: #000;
+        }
+
+        ul li {
+            list-style: none;
+            padding: .5em;
+            text-align: center;
+        }
+
+        ul {
+            padding-left: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<ul>
+    <li id="li1">Wakame</li>
+    <li id="li2">Arame</li>
+    <li id="li3">Nori</li>
+    <li id="li4">Kombu</li>
+    <li id="li5">Dasima</li>
+</ul>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var seaweed = ['li1', 'li2', 'li3','li4', 'li5'];
+        var i = 0; // index of the first item to show
+
+        Array.prototype.except = function(val) {
+            return this.filter(function(x) { return x!== val; });
+        };
+
+        setInterval(function(){
+            console.log(seaweed[i]);
+            document.getElementById(seaweed[i]).classList.add("colorElement");
+
+
+            var not_i = seaweed.except(seaweed[i]);
+            console.log(not_i);
+
+            var a = not_i[0];
+            var b = not_i[1];
+            var c = not_i[2];
+            var d = not_i[3];
+            console.log(a, b, c, d);
+
+            document.getElementById(a).classList.remove("colorElement");
+            document.getElementById(b).classList.remove("colorElement");
+            document.getElementById(c).classList.remove("colorElement");
+            document.getElementById(d).classList.remove("colorElement");
+
+            // document.querySelectorAll(not_i).classList.add("noColorElement");
+            var counter = seaweed[i++];  // get the current item index and increment
+            if (i == seaweed.length) i = 0; // reset to first element if reach the end
+
+        }, 500);
+
+    });
+</script>
+
+</body>
+</html>
