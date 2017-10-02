@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 7</title>
+
+    <!-- place a text node inside a div before live DOM -->
+    <div></div>
+
+    <!-- <p>Good morning, <strong>Cassidy</strong>.</p> -->
+
+    <!--<p>Go big Blue Blue</p>-->
+</head>
+<body>
+
+<!--<p>Hello, <strong>Cassidy</strong>, welcome to this web page!</p>-->
+
+<!--
+<p>Hi</p>
+
+<p id="p1"></p>
+<p id="p2"> </p>
+
+<p id="p3"></p>
+
+<p id="p4"></p>
+-->
+
+<!--<div></div>-->
+
+
+<div>
+    <p>Hey Yo!</p>
+    <!--
+    <h1> Dude</h1>
+    <p>you <strong>rock!</strong></p>
+    -->
+</div>
+
+
+
+<script>
+    // returns a new text node, taken from the DOM
+    console.log(document.querySelector('p').firstChild.splitText(4).data); // Yo!
+
+    // What remains in the DOM
+    console.log(document.querySelector('p').firstChild.textContent); // Hey
+</script>
+
+<script>
+    /*
+    var pElementNode = document.createElement('p');
+    var textNodeHi = document.createTextNode('Hi');
+    var textNodeCassidy = document.createTextNode('Cassidy');
+
+    pElementNode.appendChild(textNodeHi);
+    pElementNode.appendChild(textNodeCassidy);
+
+    document.querySelector('div').appendChild(pElementNode);
+    console.log(document.querySelector('p').childNodes.length); //2
+
+    document.querySelector('div').normalize();
+    console.log(document.querySelector('p').childNodes.length); //1
+    */
+</script>
+
+<script>
+    /*
+    document.body.textContent = 'You don\'t rock!';
+    console.log(document.querySelector('div').textContent); //chapter_7.html:46 Uncaught TypeError: Cannot read property 'textContent' of null at chapter_7.html:46
+    */
+</script>
+
+
+<script>
+   // console.log(document.body.textContent); // 'Dude you rock!' with whitespace
+</script>
+
+<script>
+    /*
+    var pElementNode = document.createElement('p');
+    var textNodeHi = document.createTextNode('HI ');
+    var textNodeCassidy = document.createTextNode('CASSIDY!');
+
+    pElementNode.appendChild(textNodeHi);
+    pElementNode.appendChild(textNodeCassidy);
+
+    document.querySelector('div').appendChild(pElementNode);
+
+    console.log(document.querySelector('div p').childNodes.length); // 2
+    */
+</script>
+
+
+
+<script>
+    /*
+    var pElement = document.querySelector('p');
+
+    console.log(pElement.childNodes.length); // 3
+
+    console.log(pElement.firstChild.data); // Text node              Hello,
+    console.log(pElement.firstChild.nextSibling); // Element node    <strong>Cassidy</strong>
+    console.log(pElement.lastChild.data);  // Text node              ,welcome to this web page!
+    */
+</script>
+
+
+<script>
+    /*
+    var pElementText = document.querySelector('p').firstChild;
+
+    // add !
+    pElementText.appendData('!');
+    console.log(pElementText.data); // Go big Blue Blue!
+
+    // remove !
+    pElementText.deleteData(7,5);
+    console.log(pElementText.data); // Go big Blue!
+
+
+    // insert 'Blue' back
+    pElementText.insertData(7, 'Blue ');
+    console.log(pElementText.data); // Go big Blue Blue!
+
+    // replace first 'Blue' with 'Bunny'
+    pElementText.replaceData(7,5, 'Bunny ');
+    console.log(pElementText.data);
+
+
+    console.log(pElementText.substringData(7,10)); // Bunny Blue
+    */
+</script>
+
+
+
+<script>
+    /*
+    console.log(document.querySelector('p').firstChild.data); // Good morning,
+    console.log(document.querySelector('p').firstChild.nodeValue); // Good morning,
+
+
+    console.log(document.querySelector('p').firstChild.length); // 14
+    console.log(document.querySelector('p').firstChild.data.length); // 14
+    console.log(document.querySelector('p').firstChild.nodeValue.length); // 14
+    */
+</script>
+
+
+
+<script>
+    /*
+    var elementNode = document.createElement('p');
+    var textNode = document.createTextNode('Hello, Im Johnny Cash');
+    elementNode.appendChild(textNode);
+    document.querySelector('div').appendChild(elementNode);
+
+    console.log(document.querySelector('div').innerHTML);
+    */
+</script>
+
+
+
+<script>
+    /*
+    var textNode = document.createTextNode('Hello, stranger');
+    document.querySelector('div').appendChild(textNode);
+
+    console.log(document.querySelector('div').innerText);
+    */
+</script>
+
+
+
+<script>
+    /*
+    console.log(document.querySelector('#p1').firstChild); // null
+    console.log(document.querySelector('#p2').firstChild.nodeName); // #text
+
+    console.log(document.querySelector('#p3').firstChild); // null
+    // console.log(document.querySelector('#p4').firstChild.nodeName); //chapter_7.html:20 Uncaught TypeError: Cannot read property 'nodeName' of null at chapter_7.html:20
+
+    console.log(document.querySelector('#p3').nextSibling); // #text
+    */
+</script>
+
+<script>
+    /*
+    var text = document.querySelector(('p').firstChild);
+
+    // text owned properties
+    console.log(Object.keys(text).sort());
+    //  chapter_7.html:18 Uncaught TypeError: Cannot convert undefined or null to object
+    // at Function.keys (<anonymous>)
+    // at chapter_7.html:18
+
+// ??????
+
+
+    // text own properties and inherited properties
+    var textPropertiesIncludeInherited = [];
+    for(var p in text){
+        textPropertiesIncludeInherited.push(p);
+    }
+    console.log(textPropertiesIncludeInherited.sort());
+
+
+
+    // text inherited properties only
+    var textPropertiesOnlyInherited = [];
+    for(var p in text){
+        if(!text.hasOwnProperty(p)){
+            textPropertiesOnlyInherited.push(p);
+        }
+    }
+    console.log(textPropertiesOnlyInherited.sort());
+
+*/
+
+</script>
+
+
+
+<script>
+    /*
+    var textHi = document.querySelector('p').firstChild; // select 'hi' inside the text node
+
+    console.log(textHi.constructor); // logs Text()
+
+    console.log(textHi);  // logs Text {textContent="hi"...
+    */
+</script>
+
+</body>
