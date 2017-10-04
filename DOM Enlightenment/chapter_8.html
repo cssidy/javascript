@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 8</title>
+</head>
+
+<body>
+
+<ul></ul>
+
+
+<script>
+    // create a <div> and document fragment
+    var ulElm = document.querySelector('ul');
+    var docFrag = document.createDocumentFragment();
+
+    // append li's to document fragment
+    ["blue", "green", "red", "blue", "pink"].forEach(function(e) {
+        var li = document.createElement("li");
+        li.textContent = e;
+        docFrag.appendChild(li);
+    });
+
+    // append clone
+    ulElm.appendChild(docFrag.cloneNode(true));
+
+    console.log(document.querySelector('ul').innerHTML); // <li>blue</li><li>green</li><li>red</li><li>blue</li><li>pink</li>
+    console.log(docFrag.childNodes); // (5) [li, li, li, li, li]
+
+
+</script>
+
+<script>
+    // create a <div> and document fragment
+    var divElm = document.createElement('div');
+    var docFrag = document.createDocumentFragment();
+
+    // append div to document fragment
+    docFrag.appendChild(divElm);
+
+    // create a DOM structure from a string
+    docFrag.querySelector('div').innerHTML = '<ul><li>foo</li><li>bar</li></ul>';
+
+    // append
+    document.querySelector('div').appendChild(docFrag.querySelector('div').firstChild);
+
+    console.log(document.querySelector('div').innerHTML);
+
+    // the string becomes a DOM structure I can call methods on like querySelectorAll()
+    // DOM structure is wrapped in a <div>
+    // console.log(docFrag.querySelectorAll('li').length);
+
+    // ERROR  chapter_8.html:27 Uncaught TypeError: Cannot read property 'appendChild' of null at chapter_8.html:27
+</script>
+
+<script>
+    /*
+    var ulElm = document.querySelector('ul');
+    var docFrag = document.createDocumentFragment();
+
+    ["blue", "green", "red", "blue", "pink"].forEach(function(e) {
+        var li = document.createElement("li");
+        li.textContent = e;
+        docFrag.appendChild(li);
+    });
+
+    console.log(docFrag.textContent); // logs bluegreenredbluepink
+    ulElm.appendChild(docFrag);
+    console.log(document.body.innerHTML); // logs <ul><li>blue</li><li>green</li><li>red</li><li>blue</li><li>pink</li></ul>
+    */
+</script>
+
+</body>
+</html>
