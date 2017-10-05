@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 9</title>
+
+<!--
+    <link id="linkElement" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css" rel="stylesheet" type="text/css">
+
+-->
+    <style id="styleElement">
+        body {
+            background-color: lightseagreen;
+            margin: 20px;
+        }
+        p {
+            line-height: 1.4em;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+<p>Hello, welcome to the web.</p>
+
+
+
+
+
+
+
+
+
+<script>
+    var sSheet = document.querySelector('#styleElement').sheet;
+
+    console.log(sSheet.cssRules[0].cssText); // body { background-color: lightseagreen; margin: 20px; }
+    console.log(sSheet.cssRules[1].cssText); // p { line-height: 1.4em; color: white; }
+    console.log(sSheet.cssRules.cssText); // undefined
+</script>
+
+<script>
+    /*
+    var styleSheet = document.querySelector('#styleElement').sheet;
+
+    console.log(Object.keys(styleSheet).sort());
+
+    // text own properties and inherited properties
+    var styleSheetPropertiesIncludeInherited = [];
+    for (var p in styleSheet){
+        styleSheetPropertiesIncludeInherited.push(p);
+    }
+    console.log(styleSheetPropertiesIncludeInherited.sort());
+
+    // text inherited properties only
+    var styleSheetPropertiesOnlyInherited = [];
+    for (var p in styleSheet){
+        if(!styleSheet.hasOwnProperty(p)){
+            styleSheetPropertiesOnlyInherited.push(p);
+        }
+    }
+    console.log(styleSheetPropertiesOnlyInherited.sort());
+    */
+</script>
+
+<script>
+    /*
+    console.log(document.querySelector('#linkElement').sheet);
+    console.log(document.querySelector('#styleElement').sheet);
+
+    console.log(document.styleSheets.length); // 2
+    console.log(document.styleSheets[0]);
+    console.log(document.styleSheets[1]);
+
+    console.log(document.querySelector('#styleElement').sheet.constructor); // ƒ CSSStyleSheet() { [native code] }
+    console.log(document.querySelector('#styleElement').sheet.cssRules[0].constructor); // ƒ CSSStyleRule() { [native code] }
+
+    // console.log(document.querySelector('#linkElement').constructor); //  f HTMLLinkElement() { [native code] }
+    // console.log(document.querySelector('#styleElement').constructor); //  f HTMLStyleElement() { [native code] }
+    */
+</script>
+
+</body>
+</html>
