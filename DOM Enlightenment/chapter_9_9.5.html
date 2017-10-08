@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style id="styleElement">
+        p {
+            line-height: 1.4em;
+            color: blue;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<p>Hello</p>
+
+
+
+
+
+<script>
+    /*
+    var sSheet = document.querySelector('#styleElement').sheet;
+
+    // array-like list containing all of the cssRule objects
+    console.log(sSheet.cssRules);
+
+    // indexed
+    console.log(sSheet.cssRules[0]);
+    console.log(sSheet.cssRules[1]);
+    */
+</script>
+
+
+<script>
+    /*
+    var styleSheetRule = document.querySelector('#styleElement').sheet.cssRule;
+
+    console.log(Object.keys(styleSheetRule).sort());
+    // Uncaught TypeError: Cannot convert undefined or null to object at Function.keys (<anonymous>) at chapter_9_9.5.html:22
+
+
+
+    var styleSheetRulePropertiesIncludeInherited = [];
+    for(var p in styleSheetRule){
+        styleSheetRulePropertiesIncludeInherited.push(p);
+    }
+    console.log(styleSheetRulePropertiesIncludeInherited.sort());
+
+
+    var styleSheetRulePropertiesOnlyInherited = [];
+    for(var p in styleSheetRule){
+        if(!styleSheetRule.hasOwnProperty(p)){
+            styleSheetRulePropertiesOnlyInherited.push(p);
+        }
+    }
+    console.log(styleSheetRulePropertiesOnlyInherited.sort());
+    */
+</script>
+
+</body>
+</html>
