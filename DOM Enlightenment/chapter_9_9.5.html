@@ -4,24 +4,101 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
+    <!--
     <style id="styleElement">
         p {
             line-height: 1.4em;
-            color: blue;
+            color: darkslategrey;
         }
-        p {
+        strong {
             font-size: 20px;
+            color: green;
+        }
+    </style>
+    -->
+
+    <link id="linkElement" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css" rel="stylesheet" type="text/css">
+
+    <style id="styleElement">
+        body {
+            color: aqua;
         }
     </style>
 
 </head>
 <body>
 
-<p>Hello</p>
+<p>Hello, <strong>stranger</strong></p>
 
 
 
+
+
+
+<script>
+    console.log(document.querySelector('#linkElement').disabled);
+    console.log(document.querySelector('#styleElement').disabled);
+
+
+    // fails in modern browsers
+    document.document.querySelector('#linkElement').disabled = true;
+    document.document.querySelector('#styleElement').disabled = true;
+</script>
+
+
+<script>
+    // add an external stylesheet
+    /*
+    var linkElm =document.createElement('link');
+    linkElm.setAttribute('rel', 'stylesheet');
+    linkElm.setAttribute('type', 'text/css');
+    linkElm.setAttribute('id', 'linkElement');
+    linkElm.setAttribute('href', 'http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css');
+
+    document.head.appendChild(linkElm);
+
+    console.log(document.querySelector('#linkElement'));
+    */
+</script>
+
+<script>
+    // add an inline style element
+    /*
+    var styleElm = document.createElement('style');
+    styleElm.innerHTML = 'body{color:green';
+
+    document.querySelector('head').appendChild(styleElm);
+</script>
+
+
+<script>
+    /*
+    var styleSheet = document.querySelector('#styleElement').sheet;
+
+    styleSheet.cssRules[0].style.color = 'purple';
+    styleSheet.cssRules[1].style.color = 'red';
+
+    console.log(styleSheet.cssRules[0].style.color);
+    console.log(styleSheet.cssRules[1].style.color);
+    */
+</script>
+
+
+<script>
+    /*
+    // add a new CSS rule
+    document.querySelector('#styleElement').sheet.insertRule('p{color:green}', 1);
+
+    // verify that it was added
+    console.log(document.querySelector('#styleElement').sheet.cssRules[1].cssText);
+
+    // delete what I just added
+    document.querySelector('#styleElement').sheet.deleteRule(1);
+
+    // verify it was removed
+    console.log(document.querySelector('#styleElement').sheet.cssRules[1].cssText);
+    */
+</script>
 
 
 <script>
