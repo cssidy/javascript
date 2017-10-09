@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 11</title>
+</head>
+<body>
+
+<p>click me to start event flow</p>
+
+
+
+
+
+<script>
+    // 1 capture phase
+    window.addEventListener('click', function(){console.log(1);},true);
+
+    // 2 capture phase
+    document.addEventListener('click', function(){console.log(2);},true);
+
+    // 3 capture phase
+    document.documentElement.addEventListener('click', function(){console.log(3);},true);
+
+    // 4 capture phase
+    document.body.addEventListener('click', function(){console.log(4);},true);
+
+    // 5 target phase occurs during capture phase
+    document.querySelector('p').addEventListener('click', function(){console.log(5);},true);
+
+    // 6 target phase occurs during bubbling phase
+    document.querySelector('p').addEventListener('click',function(){console.log(6);},false);
+
+    // 7 bubbling phase
+    document.body.addEventListener('click', function(){console.log(7);}, false);
+
+    // 8 bubbling phase
+    document.documentElement.addEventListener('click', function(){console.log(8);}, false);
+
+    // 9 bubbling phase
+    document.addEventListener('click', function(){console.log(9);}, false);
+
+    // 10 bubbling phase
+    window.addEventListener('click', function(){console.log(10);}, false);
+</script>
+</body>
+</html>
