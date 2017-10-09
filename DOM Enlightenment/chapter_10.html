@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- stop parsing, block parsing, execute this js then resume -->
+    <!-- this throws and error, DOM isn't even built yet -->
+    <script>
+        console.log(document.body.innerHTML); // Uncaught TypeError: Cannot read property 'innerHTML' of null at chapter_10.html:11
+    </script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // using an onload callback
+    var underscoreScript = document.createElement("script");
+    underscoreScript.src = "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js";
+    underscoreScript.onload = function(){console.log('underscore is loaded and executed');};
+    document.body.appendChild(underscoreScript);
+
+    // also have onerror, load and error callbacks
+</script>
+
+<script>
+    // Javascript files potentially get parsed out of order...
+    var underscoreScript = document.createElement("script");
+    underscoreScript.src = "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js";
+    document.body.appendChild(underscoreScript);
+
+    var jqueryScript = document.createElement("script");
+    jqueryScript.src = "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js";
+    document.body.appendChild(underscoreScript);
+
+    var mouseWheelScript = document.createElement("script");
+    jqueryScript.src = "http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js";
+    document.body.appendChild(mouseWheelScript);
+
+    document.body.onload = function(){console.log(jQuery().jquery)};
+</script>
+
+<!-- don't block, just start downloading and then parse the file when it's done downloading -->
+<script async src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+<!-- don't block, just start downloading and then parse the file when it's done downloading -->
+<script async src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- don't block, just start downloading and then parse the file when it's done downloading -->
+<script async src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+
+<script>
+    console.log(window['jQuery'] === undefined); // true
+    document.body.onload = function(){console.log(jQuery().jquery)}; // jquery not defined yet
+</script>
+
+<!-- ignore this until the <html> element is parse -->
+<script defer src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+<!-- ignore this until the <html> element is parse -->
+<script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- ignore this until the <html> element is parse -->
+<script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+
+<script>
+    console.log(window['jQuery'] === undefined); // true
+    document.body.onload = function(){console.log(jQuery().jquery)}; // 1.7.2
+</script>
+
+<!-- external cross domain Javascript include -->
+<!-- stop document parsing, block document parsing, load js, execute js, then resume document processing -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+
+<!-- page inline Javascript -->
+<!-- stop document parsing, block document parsing, execute js, then resume document parsing -->
+<script>
+    console.log('hi');
+</script>
+
+<script>
+    Array.prototype.slice.call(document.scripts).forEach(function(elm){
+        console.log(elm); // will log each script element in the DOM
+    });
+</script>
+
+</body>
+</html>
