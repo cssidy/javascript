@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 11</title>
+</head>
+<body>
+
+
+<!--
+<div>mouse over me</div>
+-->
+
+<div>click to say hi</div>
+
+
+
+
+
+<script>
+    var sayHi = function(){console.log('hi')};
+
+    // adding event listener using anonymous function
+    document.body.addEventListener('click', function(){console.log('dude');}, false);
+
+    // adding event listening using function reference
+    document.querySelector('div').addEventListener('click', sayHi, false);
+
+
+    // attempt to remove both event listeners, but only the listener added with a function reference is removed
+    document.body.removeEventListener('click', function(){console.log('dude');}, false);
+</script>
+
+<script>
+    /*
+    // mousemove event on window object, invoke the event during bubble phase
+    window.addEventListener('mousemove', function(){console.log('moving over window');}, false);
+
+    // mousemove to document object, invoke the event during bubble phase
+    document.addEventListener('mousemove', function(){console.log('moving over document');}, false);
+
+    // add mousemove to <div> element object, invoke during bubble phase
+    document.querySelector('div').addEventListener('mousemove', function(){console.log('moving over div');}, false);
+    */
+</script>
+</body>
+</html>
