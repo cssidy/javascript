@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 12</title>
+
+    <script src="dom.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+
+
+
+
+
+<script>
+    console.log(dom());
+    console.log(dom(''));
+    console.log(dom('body'));
+    console.log(dom('<p>Hello</p><p>World!</p>'));
+    console.log(dom(document.body);
+    console.log(dom([document.body, document.body]));
+    console.log(dom(document.body.children));
+    console.log(dom(dom('body')));
+    
+    console.log(dom('ul li:first-child').html('one'));
+    console.log(dom('ul li:first-child').html() === 'one');
+
+    console.log(dom('ul li:first-child').text('three'));
+    console.log(dom('ul li:first-child').text() === 'three');
+
+    dom('ul').append('<li>4</li>');
+    dom('ul').append(document.createElement('li'));
+    dom('ul').append(dom('li:first-child'));
+</script>
+
+</body>
+</html>
