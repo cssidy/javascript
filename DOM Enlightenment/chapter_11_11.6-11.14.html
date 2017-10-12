@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 11</title>
+</head>
+<body>
+
+
+<!--
+<div>No need to click, we programmatically trigger it</div>
+
+<a href="https://www.google.com">Google link</a>
+
+<input type="checkbox" />
+
+<textarea></textarea>
+-->
+
+<p>Click a table cell</p>
+
+<table border="1">
+    <tbody>
+    <tr>
+        <td>row 1 column 1</td>
+        <td>row 1 column 2</td>
+    </tr>
+    <tr>
+        <td>row 2 column 1</td>
+        <td>row 2 column 2</td>
+    </tr>
+    <tr>
+        <td>row 3 column 1</td>
+        <td>row 3 column 2</td>
+    </tr>
+    <tr>
+        <td>row 4 column 1</td>
+        <td>row 4 column 2</td>
+    </tr>
+    <tr>
+        <td>row 5 column 1</td>
+        <td>row 5 column 2</td>
+    </tr>
+    <tr>
+        <td>row 6 column 1</td>
+        <td>row 6 column 2</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<script>
+    document.querySelector('table').addEventListener('click', function(even){
+        if(event.target.tagName.toLowerCase() === 'td'){ // make sure we only run code if a td is the target
+            console.log(event.target.textContent); // use event.target to gain access to target of the event which is the td
+        }
+    })
+</script>
+
+<script>
+    /*
+    var divElement = document.querySelector('div');
+
+    // set up click event that will be simulated
+    divElement.addEventListener('click', function(event){
+        console.log(Object.keys(event));
+    }, false);
+
+    var simulatedDivClick = document.createEvent('MouseEvents');
+
+    // set up simulated click
+    simulatedDivClick.initMouseEvent('click', true, true, document.defaultView,0,0,0,0,false,false,false,0,null,null);
+
+    // invoke event
+    divElement.dispatchEvent(simulatedDivClick);
+    */
+</script>
+
+<script>
+    /*
+    var divElement = document.querySelector('div');
+
+    // create the custom event
+    var cheer = document.createEvent('CustomEvent');
+
+    // create an event listener for the custom event
+    divElement.addEventListener('goBigBlue', function(event){
+        console.log(event.detail.goBigBlueIs)
+    }, false);
+
+    // set up the details of the custom event
+    cheer.initCustomEvent('goBigBlue', true, false,{goBigBlueIs:'its gone!'});
+
+    // invoke the custom event using dispatchEvent
+    divElement.dispatchEvent(cheer);
+    */
+</script>
+
+<script>
+    /*
+    // first event attached
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('I get invoked because I was attached first');
+    }, false);
+
+    // second event attached
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('I get invoked, but stop any other click events on this target');
+        event.stopImmediatePropagation();
+    }, false);
+
+    // third event attached, but because stopImmediatePropagation() was called before this event does not get invoked
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('I get stopped from the previous click event listener');
+    }, false);
+
+    // fourth, same because of stopImmediatePropagation()
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('I get stopped too');
+    }, false);
+    */
+</script>
+
+<script>
+    /*
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('me too, but nothing from the event flow!');
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(event){
+        console.log('invoked all click events attached, but cancel capture and bubble event phases');
+        event.stopPropagation();
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(){
+        console.log('me too, but nothing from the event flow!');
+    }, false);
+
+    document.body.addEventListener('click', function(){
+        console.log('What, denied from being invoked?');
+    })
+    */
+</script>
+
+<script>
+    /*
+    document.querySelector('a').addEventListener('click', function(event){
+        event.preventDefault(); // stop event, do not load url
+    }, false);
+
+    document.querySelector('input').addEventListener('click', function(event){
+        event.preventDefault(); // stop event, do not toggle checkbox state
+    }, false);
+
+    document.querySelector('textarea').addEventListener('keypress', function(event){
+        event.preventDefault(); // stop event, no characters typed
+    }, false);
+
+    // events still propagate, stopping the default event will not prevent bubbling
+    document.body.addEventListener('click', function(){
+        console.log('the event flow still flows!');
+    }, false);
+    */
+</script>
+
+<script>
+    /*
+    document.body.addEventListener('click', function(event){
+        console.log(event.target);
+    }, false);
+    */
+</script>
+
+<script>
+    /*
+    document.addEventListener('click', function(event){
+        console.log(event.currentTarget); // logs #document
+        console.log(this);
+    }, false);
+
+    document.body.addEventListener('click', function(event){
+        console.log(event.currentTarget); // logs <body>
+        console.log(this);
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(event){
+        console.log(event.currentTarget); // logs <div>
+        console.log(this);
+    }, false);
+    */
+</script>
+
+<script>
+    /*
+    document.body.addEventListener('click', function(){
+        console.log(this); // logs <body>
+    })
+    */
+</script>
+
+<script>
+    /*
+    document.querySelector('div').addEventListener('click', function(){
+        // 'this' will be the element or node the event listener is attached to
+        console.log(this); // logs <div>Click me</div>
+    }, false);
+    */
+</script>
+
+<script>
+    /*
+    document.querySelector('div').addEventListener('click', function(event){
+        Object.keys(event).sort().forEach(function(item){
+            console.log(item+' = '+event[item]); // logs event properties and values
+            // is trusted true
+        });
+    }, false);
+
+
+    // assumes 'this' window
+    this.addEventListener('load', function(event){
+        Object.keys(event).sort().forEach(function(item){
+            console.log(item+' = '+event[item]); // logs event properties and values
+        });
+    }, false);
+    */
+</script>
+</body>
+</html>
