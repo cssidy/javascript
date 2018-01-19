@@ -1,3 +1,7 @@
-# javascript-practice
+# javascript
 
-Various exercises undertaken to strengthen my Javascript skills. Most of these come from books.
+Various books I've worked through to strengthen my Javascript skills.
+
+## /miscellaneous
+
+Contains scripts of my own to prototype concepts I've learned on-the-job.
