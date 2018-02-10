@@ -30,3 +30,13 @@ console.log(todoList);
 
 console.log([1,2,3,2,1].indexOf(2));
 console.log([1,2,3,2,1].lastIndexOf(2));
+
+console.log([0,1,2,3,4].slice(2,4));
+console.log([0,1,2,3,4].slice(2));
+
+function argumentCounter() {
+    console.log("You gave me", arguments.length, "arguments.");
+}
+argumentCounter("Straw man", "Tautology", "Ad hominem");
+
+console.log(Math.floor(Math.random() * 10));
