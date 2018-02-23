@@ -54,7 +54,7 @@ var directionNames = "n ne e se s sw w nw".split(" ");
 
 function BouncingCritter() {
   this.direction = randomElement(directionNames);
-};
+}
 
 BouncingCritter.prototype.act = function(view) {
   if (view.look(this.direction) != " ")
@@ -102,20 +102,6 @@ World.prototype.toString = function() {
 };
 
 function Wall() {}
-
-var world = new World(plan, {"#": Wall,
-                             "o": BouncingCritter});
-//   #      #    #      o      ##
-//   #                          #
-//   #          #####           #
-//   ##         #   #    ##     #
-//   ###           ##     #     #
-//   #           ###      #     #
-//   #   ####                   #
-//   #   ##       o             #
-//   # o  #         o       ### #
-//   #    #                     #
-//   ############################
 
 Grid.prototype.forEach = function(f, context) {
   for (var y = 0; y < this.height; y++) {
@@ -273,6 +259,7 @@ Plant.prototype.act = function(view) {
     return {type: "grow"};
 };
 
+// plant eaters are greedy consumers
 function PlantEater() {
   this.energy = 20;
 }
@@ -285,6 +272,26 @@ PlantEater.prototype.act = function(view) {
     return {type: "eat", direction: plant};
   if (space)
     return {type: "move", direction: space};
+};
+
+// smart plant eaters eat and reproduce in a sustainable way
+function SmartPlantEater() {
+    this.energy = 30;
+    this.direction = "e";
+}
+SmartPlantEater.prototype.act = function(view) {
+    var space = view.find(" ");
+    // if the critter has ample energy stores and there is space around them they can reproduce
+    if (this.energy > 120 && space)
+        return {type: "reproduce", direction: space};
+    var plants = view.findAll("*");
+    // if there are more than one plants remaining they can eat
+    if (plants.length > 1)
+        // plant eaters graze in groups
+        return {type: "eat", direction: randomElement(plants)};
+    if (view.look(this.direction) != " " && space)
+        this.direction = space;
+    return {type: "move", direction: this.direction};
 };
 
 var valley = new LifelikeWorld(
@@ -301,6 +308,48 @@ var valley = new LifelikeWorld(
    "##****     ###***       *###",
    "############################"],
   {"#": Wall,
-   "O": PlantEater,
+   "O": SmartPlantEater,
    "*": Plant}
 );
+
+function Tiger() {
+    this.energy = 30;
+}
+Tiger.prototype.act = function(view) {
+  var space = view.find(" ");
+  if (this.energy > 60 && space)
+    return {type: "reproduce", direction: space};
+  var prey = view.find("O");
+  if (prey)
+    return {type: "eat", direction: prey};
+  if (space)
+    return {type: "move", direction: space};
+};
+
+var jungle = new LifelikeWorld(
+    ["####################################################",
+   "#                 ####         ****              ###",
+   "#   *  @  ##                 ########       OO    ##",
+   "#   *    ##        O O                 ****       *#",
+   "#       ##*                        ##########     *#",
+   "#      ##***  *         ****                     **#",
+   "#* **  #  *  ***      #########                  **#",
+   "#* **  #      *               #   *              **#",
+   "#     ##              #   O   #  ***          ######",
+   "#*            @       #       #   *        O  #    #",
+   "#*                    #  ######                 ** #",
+   "###          ****          ***                  ** #",
+   "#       O                        @         O       #",
+   "#   *     ##  ##  ##  ##               ###      *  #",
+   "#   **         #              *       #####  O     #",
+   "##  **  O   O  #  #    ***  ***        ###      ** #",
+   "###               #   *****                    ****#",
+   "####################################################"],
+  {"#": Wall,
+   "@": Tiger,
+   "O": SmartPlantEater,
+   "*": Plant}
+);
+
+
+
