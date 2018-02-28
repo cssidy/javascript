@@ -69,43 +69,52 @@ function minusOne(match, amount, unit) {
 }
 console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
 
+
+// regex challenge
+
+// car and cat
 let regexPattern = /cat$|car$/;
 console.log(regexPattern);
 console.log(regexPattern.test("cat"));
 console.log(regexPattern.test("car"));
 console.log(regexPattern.test("cart"));
 
+// pop and prop
 regexPattern = /pr?op$/;
 console.log(regexPattern);
 console.log(regexPattern.test("pop"));
 console.log(regexPattern.test("prop"));
 console.log(regexPattern.test("props"));
 
+// ferret, ferry and ferrari
 regexPattern = /(ferr)et$|y$|ari$/;
 console.log(regexPattern);
 console.log(regexPattern.test("ferret"));
 console.log(regexPattern.test("ferry"));
 console.log(regexPattern.test("ferrari"));
 
-regexPattern = /(\s).|,|:|;/;
+// any word ending in ious
+regexPattern = /\w(ious)$/;
 console.log(regexPattern);
-console.log(regexPattern.test(" . "));
-console.log(regexPattern.test(" , "));
-console.log(regexPattern.test("hello :"));
-console.log(regexPattern.test("goodbye ;"));
+console.log(regexPattern.test("pious"));
+console.log(regexPattern.test("delicious"));
+console.log(regexPattern.test("consciousness"));
 
+// a whitespace character followed by a dot, comma, colon or semicolon
+regexPattern = /(\s)[.,:;]/;
+console.log(regexPattern);
+console.log(regexPattern.test(" "));
+console.log(regexPattern.test("dot ."));
+console.log(regexPattern.test("hello ; ."));
+
+// a word longer than six letters
 regexPattern = /\w{7,}$/;
 console.log(regexPattern);
 console.log(regexPattern.test("short"));
-console.log(regexPattern.test("123456"));
+console.log(regexPattern.test("1234567"));
 console.log(regexPattern.test("helios"));
 
-regexPattern = /\w{6}$/;
-console.log(regexPattern);
-console.log(regexPattern.test("short"));
-console.log(regexPattern.test("123456"));
-console.log(regexPattern.test("helios"));
-
+// a word without the letter e
 regexPattern = /^e|e|e$/;
 console.log(regexPattern);
 console.log(regexPattern.test("pious"));
