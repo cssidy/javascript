@@ -69,3 +69,46 @@ function minusOne(match, amount, unit) {
 }
 console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
 
+let regexPattern = /cat$|car$/;
+console.log(regexPattern);
+console.log(regexPattern.test("cat"));
+console.log(regexPattern.test("car"));
+console.log(regexPattern.test("cart"));
+
+regexPattern = /pr?op$/;
+console.log(regexPattern);
+console.log(regexPattern.test("pop"));
+console.log(regexPattern.test("prop"));
+console.log(regexPattern.test("props"));
+
+regexPattern = /(ferr)et$|y$|ari$/;
+console.log(regexPattern);
+console.log(regexPattern.test("ferret"));
+console.log(regexPattern.test("ferry"));
+console.log(regexPattern.test("ferrari"));
+
+regexPattern = /(\s).|,|:|;/;
+console.log(regexPattern);
+console.log(regexPattern.test(" . "));
+console.log(regexPattern.test(" , "));
+console.log(regexPattern.test("hello :"));
+console.log(regexPattern.test("goodbye ;"));
+
+regexPattern = /\w{7,}$/;
+console.log(regexPattern);
+console.log(regexPattern.test("short"));
+console.log(regexPattern.test("123456"));
+console.log(regexPattern.test("helios"));
+
+regexPattern = /\w{6}$/;
+console.log(regexPattern);
+console.log(regexPattern.test("short"));
+console.log(regexPattern.test("123456"));
+console.log(regexPattern.test("helios"));
+
+regexPattern = /^e|e|e$/;
+console.log(regexPattern);
+console.log(regexPattern.test("pious"));
+console.log(regexPattern.test("moose"));
+console.log(regexPattern.test("esox"));
+
