@@ -5,6 +5,7 @@
     <title>Chapter 14</title>
 
     <style>
+        /*
         body {
             height: 200px;
             background: beige;
@@ -17,16 +18,53 @@
             background: #000;
             position: absolute;
         }
+        */
+        .progress {
+            border: 1px solid mediumseagreen;
+            width: 100px;
+            position: fixed;
+            top: 30px;
+            right: 10px;
+        }
+
+        .progress > div {
+            height: 12px;
+            background: mediumseagreen;
+            width: 0%;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .trail { /* className for the trail elements */
+            position: absolute;
+            height: 6px;
+            width: 6px;
+            border-radius: 3px;
+            background: teal;
+        }
     </style>
 </head>
 <body>
 
+<div style="position:fixed; top:10px; right: 10px; font-size: 13px;">Reading progress:</div>
+<div class="progress"><div></div></div>
+
+<h1>Scroll me...</h1>
+
 <p>This page turns violet when you hold the 'v' key down.</p>
 
-<div>
+<p>Drag the bar to change its width:</p>
+<div id="sliderBar" style="background: orange; width: 60px; height: 20px;"></div>
 
-</div>
+<p id="hoverPara">Hover over this <strong>paragraph</strong>.</p>
 
+<form>
+    <p>Name: <input type="text" data-help="Your full name"></p>
+    <p>Age: <input type="text" data-help="Age in years"></p>
+    <p id="help"></p>
+</form>
 
 <script>
     addEventListener("keydown", function(event) {
@@ -46,6 +84,7 @@
 </script>
 
 <script>
+    /*
     addEventListener("click", function(event) {
         let dot = document.createElement("div");
         dot.className = "dot";
@@ -53,6 +92,122 @@
         dot.style.top = (event.pageY - 4) + "px";
         document.body.appendChild(dot);
     });
+    */
+</script>
+
+<script>
+    let lastX;
+    const rect = document.querySelector("#sliderBar");
+    rect.addEventListener("mousedown", function(event) {
+        if (event.which == 1) {
+            lastX = event.pageX;
+            addEventListener("mousemove", moved);
+            event.preventDefault();
+        }
+    });
+
+    function buttonPressed(event) {
+        if (event.buttons = null)
+            return event.which != 0;
+        else
+            return event.buttons != 0;
+    }
+
+    function moved(event) {
+        if (!buttonPressed(event)) {
+            removeEventListener("mousemove", moved);
+        } else {
+            let dist = event.pageX - lastX;
+            let newWidth = Math.max(10, rect.offsetWidth + dist);
+            rect.style.width = newWidth + "px";
+            lastX = event.pageX;
+        }
+    }
+</script>
+
+<script>
+    const para = document.getElementById("hoverPara");
+    function isInside(node, target) {
+        for (; node != null; node = node.parentNode)
+            if (node == target) return true;
+    }
+
+    para.addEventListener("mouseover", function(event) {
+        if (!isInside(event.relatedTarget, para))
+            para.style.color = "violet";
+    });
+    para.addEventListener("mouseout", function(event) {
+        if (!isInside(event.relatedTarget, para))
+            para.style.color = "";
+    });
+</script>
+
+<script>
+    const bar = document.querySelector(".progress div");
+    addEventListener("scroll", function() {
+        let max = document.body.scrollHeight - innerHeight;
+        let percent = (pageYOffset / max) * 100;
+        bar.style.width = percent + "%";
+    })
+</script>
+
+<script>
+    const help = document.querySelector("#help");
+    const fields = document.querySelectorAll("input");
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].addEventListener("focus", function(event) {
+            let text = event.target.getAttribute("data-help");
+            help.textContent = text;
+        });
+        fields[i].addEventListener("blur", function(event) {
+            help.textContent = "";
+        });
+    }
+</script>
+
+<script>
+    document.body.style.background = "beige";
+    setTimeout(function() {
+        document.body.style.background = "crimson";
+    }, 2000);
+</script>
+
+<script>
+    /*
+    function displayCoords(event) {
+        document.body.textContent = "Mouse at " + event.pageX + ", " + event.pageY;
+    }
+
+    let scheduled = false, lastEvent;
+    addEventListener("mousemove", function(event) {
+        lastEvent = event;
+        if (!scheduled) {
+            scheduled = true;
+            setTimeout(function() {
+                scheduled = false;
+                displayCoords(lastEvent);
+            }, 250);
+        }
+    });
+    */
+</script>
+
+<script>
+  const dots = [];
+  for (let i = 0; i < 12; i++) {
+    const node = document.createElement("div");
+    node.className = "trail";
+    document.body.appendChild(node);
+    dots.push(node);
+  }
+  let currentDot = 0;
+
+  addEventListener("mousemove", function(event) {
+    let dot = dots[currentDot];
+    dot.style.left = (event.pageX - 3) + "px";
+    dot.style.top = (event.pageY - 3) + "px";
+    currentDot = (currentDot + 1) % dots.length;
+  });
 </script>
 
 </body>
