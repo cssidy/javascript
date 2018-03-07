@@ -6,16 +6,85 @@
 </head>
 <body>
 
-<form>
+<form action="/example/submit.html">
+
+    <p>Value: <input type="text" name="value"></p>
     <p><label for="textArea">Enter text</label></p>
 
     <p><textarea id="textArea" rows="10"></textarea></p>
 
-    <p><input type="radio" autofocus> Checkbox</p>
+    <select multiple size="4">
+        <option value="1">Cacti</option>
+        <option value="2">Succulents</option>
+        <option value="3">Orchids</option>
+        <option value="4">Air plants</option>
+    </select> = <span id="output">0</span>
+
+    <!--
+    <p><label for="purple">Make this page purple</label></p>
+    <p><input type="radio" id="purple"> Checkbox</p>
+    -->
+
+    <p><button>Click me</button></p>
+
+    <p><button disabled>Can't click me</button></p>
+
+    <div>
+        <p><label for="color">Set the background color:</label></p>
+        <ul>
+            <li><input type="radio" name="color" value="mediumpurple"> purple</li>
+            <li><input type="radio" name="color" value="lightgreen"> green</li>
+            <li><input type="radio" name="color" value="lightblue"> blue</li>
+        </ul>
+
+
+    </div>
+
+    <div><button type="submit">Log in</button></div>
+
 </form>
 
 
-<script></script>
+<script>
+    // disable default form submit action
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+        console.log("Saving value", form.elements.value.value);
+        event.preventDefault();
+    });
+</script>
+
+<script>
+    // on checkbox click, turn page purple
+    const checkbox = document.querySelector("#purple");
+    checkbox.addEventListener("change", function() {
+        document.body.style.background = checkbox.checked ? "mediumpurple" : "";
+    });
+</script>
+
+<script>
+    // change page color depending on radio button clicked
+    const buttons = document.getElementsByName("color");
+    function setColor(event) {
+        document.body.style.background = event.target.value;
+    }
+    for (let i=0; i < buttons.length; i++)
+        buttons[i].addEventListener("change", setColor);
+</script>
+
+<script>
+    const select = document.querySelector("select");
+    const output = document.querySelector("#output");
+    select.addEventListener("change", function() {
+        let number = 0;
+        for (let i = 0; i < select.options.length; i++) {
+            let option = select.options[i];
+            if (option.selected)
+                number += Number(option.value);
+        }
+        output.textContent = number;
+    });
+</script>
 
 </body>
 </html>
