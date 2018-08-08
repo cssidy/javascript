@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyevents</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <style>
+        small {
+            color: #0000EE;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input:invalid {
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <label for="inputValue">Enter value</label>
+    <input id="inputValue" type="number" step="0.01">
+
+    <input type="submit">
+</form>
+
+<p>Keydown: <span id="outputKeydown"></span>
+    <br>
+    <small>Keydown fires when you press a key.</small>
+</p>
+
+<p>Keyup: <span id="outputKeyup"></span></p>
+
+
+<p>Keypress: <span id="outputKeypress"></span>
+    <br>
+    <small>Keypress fires after the keydown event.</small>
+</p>
+
+<p>Previous Value: <span id="previousValue"></span></p>
+
+
+<h1>Notes from Mozilla:</h1>
+<p>In a keypress event, the Unicode value of the key pressed is stored in either the keyCode or charCode property, never both. If the key pressed generates a character (e.g. 'a'), charCode is set to the code of that character, respecting the letter case. (i.e. charCode takes into account whether the shift key is held down). Otherwise, the code of the pressed key is stored in keyCode.</p>
+<p>charCode is never set in the keydown and keyup events. In these cases, keyCode is set instead.</p>
+<p>To get the code of the key regardless of whether it was stored in keyCode or charCode, query the which property.</p>
+
+<p>This is the regular expression that I may try to use... [0-9]{0,3}\.{1}?[0-9]{0,2}</p>
+
+
+<script type="text/javascript">
+
+
+
+    $(function () {
+        let inputValue = $("#inputValue");
+        let outputKeypress = $("#outputKeypress");
+        let outputKeydown = $("#outputKeydown");
+        let outputKeyup = $("#outputKeyup");
+        let previousValue = $("#previousValue");
+
+        inputValue.keydown(function (event) {
+            keyCatch(event, outputKeydown);
+        });
+
+        inputValue.keyup(function (event) {
+            keyCatch(event, outputKeyup);
+        });
+
+        // TODO:
+        // on keypress:
+        // show previous input values
+        // capture new key code
+
+        // if new key code is forbidden:
+        // revert input to previous value
+        // else nothing
+
+        /*
+        inputValue.keypress(function(event) {
+            if (event.which >= 48 && event.which <= 57 || event.which == 46 || event.which == 190 ||
+                event.which == 46 || event.which == 8) {
+                console.log('True')
+                previousValue.text(inputValue.val());
+            }
+            else {
+                event.preventDefault();
+                console.log('False')
+            }
+
+        });
+        */
+
+        inputValue.keypress(function (event) {
+            keyCatch(event, outputKeypress);
+        });
+
+
+
+        function keyCatch(event, output) {
+
+            // show event.which
+            output.html("event.which " + event.which + " &nbsp;&nbsp;&nbsp;&nbsp; " + " event.keyCode " + event.keyCode);
+
+
+            // keys not recognized by keypress
+            switch (event.which) {
+                case 0:
+                    output.append(" Unknown");
+                    break;
+
+                case 13:
+                    output.append(" Enter");
+                    break;
+                case 27:
+                    output.append(" Escape");
+                    break;
+                case 35:
+                    output.append(" End");
+                    break;
+                case 36:
+                    output.append(" Home");
+                    break;
+            }
+
+            // block keys
+            // 48 - 57 are numeric 0-9
+            // 46 and 190 are decimal point
+            // 10 and 13 are Safari on iPhone default for enter/submit
+            // 8 and 46 (oddly) are backspace
+            switch (true) {
+                case (event.which >= 48 && event.which <= 57 || event.which == 46 || event.which == 190 ||
+                    event.which == 46 || event.which == 8):
+                    output.append(" True");
+                    break;
+                default:
+                    output.append(" False");
+                    break;
+            }
+
+
+
+            previousValue.text(inputValue.val());
+
+        }
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>
