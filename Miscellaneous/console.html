@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>console.log() Explorations</title>
+
+    <style>
+        body {
+            background: #e34234;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: Helvetica, "Helvetica Neue", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Inspect me.</h1>
+
+
+
+<script>
+    const dogs = [
+        {type: 'Akita', name: 'Matcha', age: 3, gender: 'male'},
+        {type: 'German Shepard', name: 'Mocha', age: 4, gender: 'female'},
+        {type: 'Dachshund', name: 'Miko', age: 6, gender: 'male'},
+        {type: 'Doberman', name: 'Zephyr', age: 5, gender: 'female'}
+    ];
+
+
+    // Regular
+    console.log('Hello');
+
+    // Interpolated
+    console.log('Hello I am a %s dog.', 'yellow');
+
+    // Styled
+    console.log('%c This text is styley', 'font-size: 40px; background: orange; color: green; text-shadow: 5px 5px 0 yellow');
+
+    // Warning
+    console.warn('Warning');
+
+    // Info
+    console.info('Informational Info');
+
+    // Error
+    console.error('Error: Syntax Error.');
+
+    // Testing
+    const text = document.querySelector('h1');
+    console.assert(text.classList.contains('styley'), 'This element contains the .styley class.');
+
+    // Clear
+    console.clear();
+
+    // View DOM Elements
+    console.log(text);
+    console.dir(text);
+
+    // Grouping
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is a ${dog.age} year old ${dog.gender} ${dog.type}.`);
+        console.groupEnd(`${dog.name}`);
+    });
+
+    // Count
+    console.count('Akita');
+    console.count('Akita');
+    console.count('Akita');
+    console.count('Akita');
+    console.count('Akita');
+    console.countReset('Akita');
+    console.count('Akita');
+
+    // Time
+    console.time('Fetching...');
+    fetch('https://api.github.com/users/cssidy')
+        .then(data => data.json())
+        .then(data => {
+            console.timeEnd('Fetching...');
+            // console.timeLog('Fetching...');
+            console.timeStamp();
+            console.log(data);
+    });
+
+    // Table
+    console.table(dogs);
+
+    // Profile
+    console.profile();
+
+    // Trace
+    // console.trace();
+
+    // Debugger
+    // debugger;
+
+    // Memory
+    // console.memory
+
+    // TO DO
+    // console.todo('This is a thing to do that I haven\'t done yet.');
+    // This doesn't seem to work anymore...
+
+    // Important
+    // console.important('This is a really important thing.');
+    // This doesn't seem to work anymore...
+
+
+</script>
+
+</body>
+</html>
