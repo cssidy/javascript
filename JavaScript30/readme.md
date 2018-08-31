@@ -1,6 +1,6 @@
 # JavaScript 30
 
-These are my solutions of the popular "JavaScript 30" challenge by Wes Bos.
+These are my solutions to the popular "JavaScript 30" challenge by Wes Bos.
 
 - [x] 1
 - [ ] 2
