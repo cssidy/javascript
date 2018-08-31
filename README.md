@@ -12,6 +12,7 @@ Various books I've worked through to strengthen my Javascript skills.
 
 * **Secrets of the JavaScript Ninja**, John Resign, Bear Bibeault, Josip Maras
 * **JavaScript - The Definitive Guide**, David Flanagan
+* **JavaScript 30**, Wes Bos
 
 ## /miscellaneous
 
