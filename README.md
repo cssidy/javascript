@@ -15,4 +15,4 @@ Various books I've worked through to strengthen my Javascript skills.
 
 ## /miscellaneous
 
-Contains scripts of my own, prototype concepts I've learned on-the-job.
+Contains scripts of my own, prototype concepts I've learned on-the-job, challenges from various sources, compiled notes.
