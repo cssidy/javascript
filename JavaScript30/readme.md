@@ -2,6 +2,8 @@
 
 These are my solutions to the popular "JavaScript 30" challenge by Wes Bos.
 
+Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
+
 - [x] 1
 - [ ] 2
 - [ ] 3
@@ -33,7 +35,4 @@ These are my solutions to the popular "JavaScript 30" challenge by Wes Bos.
 - [ ] 29
 - [ ] 30
 
-Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
-
-Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 
