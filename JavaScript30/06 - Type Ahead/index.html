@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autocomplete</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn|Average+Sans" rel="stylesheet">
+    <!-- inspired by https://github.com/wesbos/JavaScript30 -->
+
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family:'Average Sans', 'helvetica neue', 'helvetica', sans-serif;
+            font-size: 20px;
+            font-weight: 200;
+            background-image: url("bananas.png");
+            background-repeat: repeat;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        input {
+            width: 100%;
+            padding:20px;
+        }
+        .search-form {
+            max-width:400px;
+            margin:50px auto;
+        }
+        input.search {
+            margin: 0;
+            outline: 0;
+            text-align: center;
+            width: 120%;
+            left: -10%;
+            top: 3px;
+            position: relative;
+            border: 1px solid #ffc600;
+            z-index: 2;
+            font-size: 30px;
+            font-family:'Average Sans', 'helvetica neue', 'helvetica', sans-serif;
+        }
+        input.search:focus {
+        }
+        .suggestions {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .suggestions li {
+            background:white;
+            color: darkcyan;
+            list-style: none;
+            border-left: 1px solid #ffc600;
+            border-right: 1px solid #ffc600;
+            border-bottom: 1px solid #ffc600;
+            margin:0;
+            padding:10px;
+            transition:background 0.2s;
+            display:flex;
+            justify-content:space-between;
+            text-transform: capitalize;
+        }
+        .suggestions li:nth-child(even) {
+            transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+        }
+        .suggestions li:nth-child(odd) {
+            transform: perspective(100px) rotateX(-3deg) translateY(3px);
+        }
+        span.population {
+            font-size: 15px;
+        }
+        .hl {
+            background:#ffc600;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+<form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+    </ul>
+</form>
+<script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const cities = [];
+    fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => cities.push(...data));
+    function findMatches(wordToMatch, cities) {
+        return cities.filter(place => {
+            // regex 'g' and 'i' mean global and insensitive
+            const regex = new RegExp(wordToMatch, 'gi');
+            return place.city.match(regex) || place.state.match(regex)
+        });
+    }
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    function displayMatches() {
+        const matchArray = findMatches(this.value, cities);
+        const html = matchArray.map(place => {
+            const regex = new RegExp(this.value, 'gi');
+            const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+            const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+            return `
+                <li>
+                    <span class="name">${cityName}, ${stateName}</span>
+                    <span class="population">${numberWithCommas(place.population)}</span>
+                </li>
+            `;
+        }).join('');
+        suggestions.innerHTML = html;
+    }
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+    searchInput.addEventListener('keyup', displayMatches);
+</script>
+</body>
+</html>
