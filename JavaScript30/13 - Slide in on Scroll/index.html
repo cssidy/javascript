@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrolling images with JavaScript and CSS Transform</title>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <style>
+        html {
+            box-sizing: border-box;
+            background: beige;
+            background-image: url("bananas.png");
+            background-repeat: repeat;
+            font-family: 'Vollkorn', Georgia, serif;
+            font-size: 18px;
+        }
+        body {
+            margin: 0;
+
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+            margin: .125em;
+        }
+
+        h2, h3, h4 {
+            font-family: Helvetica, "Helvetica Neue", sans-serif;
+        }
+        img {
+            margin: 10px 0;
+        }
+        .site-wrap {
+            max-width: 700px;
+            margin: 100px auto;
+            background:white;
+            padding:40px;
+        }
+        .align-left {
+            float:left;
+            margin-right:20px;
+        }
+        .align-right {
+            float:right;
+            margin-left:20px;
+        }
+        .slide-in {
+            opacity:0;
+            transition:all .5s;
+        }
+        .align-left.slide-in {
+            transform:translateX(-30%) scale(0.95);
+        }
+        .align-right.slide-in {
+            transform:translateX(30%) scale(0.95);
+        }
+        .slide-in.active {
+            opacity:1;
+            transform:translateX(0%) scale(1);
+        }
+        blockquote {
+
+        }
+        blockquote {
+            padding: 15px;
+        }
+        blockquote p::before {
+            content: '\201C';
+        }
+        blockquote p::after {
+            content: '\201D';
+        }
+        cite {
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="site-wrap">
+
+    <h1>Dune</h1>
+    <h4>by Frank Herbert</h4>
+
+    <blockquote cite="https://www.npr.org/books/titles/139086715/dune#excerpt">
+        <p>A beginning is the time for taking the most delicate care that the balances are correct. This every sister of the Bene Gesserit knows. To begin your study of the life of Muad'Dib, then, take care that you first place him in his time: born in the 57th year of the Padishah Emperor, Shaddam IV. And take the most special care that you locate Muad'Dib in his place: the planet Arrakis. Do not be deceived by the fact that he was born on Caladan and lived his first fifteen years there. Arrakis, the planet known as Dune, is forever his place.</p>
+        <cite>—from "Manual of Muad'Dib"<br>by the Princess Irulan</cite>
+    </blockquote>
+
+
+    <p>True citadel befalls against troubador since Voice from the Outer World topples. The traitor seeks where naib grasps. From death after message, until harvester but the betrayal. Sandstorm gushes behind the chivalrous eunuch into the Muad'Dib contends bold. Whenever enlightenment not only Liet-Kynes on the transitory Feyd.</p>
+
+    <p>Along capsule after training, on troubador whenever the guilt. The hunter-seeker trains the stable Irulan, where Giedi Prime either Bene Gesserit. The Kwisatz Haderach avoids out Otheym, into population wherever terror terrifies legendary. Rival faces below the countless splinter throughout the wound hallucinates trained. Major religion claims upon traitor. Enemy encloses whether insight. Experience says the significant complexity as Shadout witnesses transitory doubt.</p>
+
+    <img src="http://unsplash.it/400/300" class="align-right slide-in">
+
+    <p>Fist behind soul, challenge beyond brutish Butlerian Jihad, Water of Life about unfinished suspensor disturbs. As if the legion promises naib behind the Stilgar. Beside Vladimir trade gushes at inheritance, when flows. Treacherous Liet-Kynes chooses by Salusa Secundus so companion pays. The Salusa Secundus rides, the discontent saves.</p>
+
+    <p>The Paul despises among throne, on ambush even though triumph contends faithful. Shaddam IV commands the secret Suk School. Through Thufir thus spoke Spacing Guild, down betrayal yet the perception. Among legion enlightenment secretly wishes into necessity, while mates. When teacher fulfills the meteor, past companion testing facility rides. Ancestor sleeps as if million deaths.</p>
+
+    <img src="http://unsplash.it/400/300" class="align-right slide-in">
+
+    <p>Toward slave production enslaves during soul, while guides. The Little Maker gushes, the suspensor mates. The courtesan uses that banner attacks. Maula studies the faster Irulan since doubt suffers flowing understanding. Accepts environment befalls to Harkonnen as if carry-all terrifies. Thus spoke the thumper rages purpose toward the Landsraad. Shout around allegiance, throne unlike absolute turmoil, folly underneath scorched Helen dances.</p>
+
+    <img src="http://unsplash.it/200/500" class="align-left slide-in">
+
+    <p>Yet Tleilax flounders the exploitation, as dew gatherer enlightenment betrays. Stillsuit flounders the persistent combat, little-death accepts symmetrical windtrap. The thinking faces, the shield recites the million Kwisatz Haderach. Dew gatherer guides the foolish understanding, gom jabbar slips legendary Leto. Missionaria Protectiva creates the propaganda, unless native sings the suspicion controls.</p>
+
+
+    <p>Among stillsuit thus spoke resemblance, behind total obliteration because the control. Flowing Paul deceives along baliset. Ornithopter despises the adept vision although meteor influences upper palace. Flower-spangled silence respects behind moisture and Farrukh sinks. The swordmaster says, the water moves the minor water-fat.</p>
+
+    <img src="http://unsplash.it/300/300" class="align-right slide-in">
+
+    <p>Seduction controls the forever inheritance though splinter attacks transitory Taqwa. The commando deceives, the Harah claims the safe Corrino. Over the powerful the Way repels the mysterious jihad because the faster Piter neither prepares humanity. Folly blames the sayyadina understands the pervasive leader. Taqwa shows the wasteful Spacing Guild. After the wisdom travels shield against the crest.</p>
+
+    <p>The galaxy sings the well-known base of the pillar, while tooth yet Fenring. The Shai-Hulud flows, the maula hears. The maker respects the free Corrino, but allegiance even though probe. Meteor answers the deaf tension, Salusa Secundus sow angry Caladan. Sacrifice creates the false truthsayer even though troubador acts feminine planet.</p>
+
+    <p>
+        <a href="http://duneipsum.herokuapp.com">Dune Ipsum</a> by Blackwright.
+    </p>
+
+
+
+</div>
+
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+        let timeout;
+        return function() {
+            let context = this, args = arguments;
+            let later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            let callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide(e) {
+        sliderImages.forEach(sliderImage => {
+            // half way through the image
+            const slideInAt =  (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+            // bottom of the image
+            const imageBottom = sliderImage.offsetTop + sliderImage.height;
+            const isHalfShown = slideInAt > sliderImage.offsetTop;
+            const isNotScrolledPast = window.scrollY < imageBottom;
+
+            if(isHalfShown && isNotScrolledPast) {
+                sliderImage.classList.add('active');
+            } else {
+                sliderImage.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+</script>
+
+</body>
+</html>
