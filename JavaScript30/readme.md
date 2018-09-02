@@ -30,7 +30,7 @@ Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 - [ ] 24
 - [ ] 25
 - [ ] 26
-- [ ] 27
+- [x] 27
 - [ ] 28
 - [ ] 29
 - [ ] 30
