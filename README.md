@@ -7,10 +7,10 @@ Various books I've worked through to strengthen my Javascript skills.
 * **DOM Enlightenment**, Cody Lindley
 * **JavaScript Enlightenment**, Cody Lindley
 * **Eloquent JavaScript**, Marijn Haverbeke
+* **Secrets of the JavaScript Ninja**, John Resign, Bear Bibeault, Josip Maras
 
 ### In Progress
 
-* **Secrets of the JavaScript Ninja**, John Resign, Bear Bibeault, Josip Maras
 * **JavaScript - The Definitive Guide**, David Flanagan
 * **JavaScript 30**, Wes Bos
 
